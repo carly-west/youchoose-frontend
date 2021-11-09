@@ -40,3 +40,57 @@ section.top ul {
   padding: 0;
   margin: 0;
 }
+
+
+
+
+
+
+/* Index */
+.index-body div {
+  width: 12rem;
+  padding: 1.5rem 0px 1.5rem 0px;
+  display: block;
+  font-size: 1.5rem;
+  border: 1px black solid;
+  text-align: center;
+}
+
+.login-button {
+  margin: 20% auto auto auto;
+}
+
+.register-button {
+  margin: 10% auto auto auto;
+}
+
+.index-body h1 {
+  text-align: center;
+  max-width: 80%;
+  margin: 20% auto 0px auto;
+}
+
+
+
+/* Register and login*/
+.register-body input[type="email"], 
+.register-body input[type="password"],
+.login-body input[type="email"], 
+.login-body input[type="password"] {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.register-body, .login-body {
+  margin: 1rem 0px 0px 1rem;
+}
+
+.register-body button, .login-body button {
+  /* Button won't go to center */
+  margin: 1rem auto 0px auto;
+}
