@@ -39,6 +39,15 @@ body {
   cursor: pointer;
 }
 
+/* Reuseable button */
+.button-reuse {
+  display:block;
+  padding: .5rem 1rem .5rem 1rem;
+  font-size: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* .btn:hover {
   background-color: RoyalBlue;
 } */
@@ -60,6 +69,13 @@ a:visited {
   color: black;
 }
 
+.register-link {
+  color: blue;
+  text-decoration: underline;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 15px;
+}
 
 /* Back-button */
 .back-button {
@@ -68,6 +84,11 @@ a:visited {
   display: block;
   font-size: 1rem;
   border: 1px black solid;
+  text-align: center;
+}
+
+/* You choose header */
+.you-choose-h1 {
   text-align: center;
 }
 
@@ -85,11 +106,11 @@ a:visited {
   margin: 20% auto auto auto;
 }
 
-.register-button {
+.join-button {
   margin: 10% auto auto auto;
 }
 
-.index-body h1 {
+.index-body h2 {
   text-align: center;
   max-width: 80%;
   margin: 20% auto 0px auto;
@@ -101,21 +122,35 @@ a:visited {
 .register-body input[type="email"], 
 .register-body input[type="password"],
 .login-body input[type="email"], 
-.login-body input[type="password"] {
+.login-body input[type="password"],
+.join-body input[type="number"] {
   width: 80%;
   padding: 12px 20px;
-  margin: 8px 0;
   display: block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  margin: 10px auto 30px auto;
 }
 
-.register-body, .login-body {
-  margin: 1rem 0px 0px 1rem;
+label {
+  margin-left: 10%;
 }
+
+h2 {
+  text-align: center;
+}
+
+/* .register-body, .login-body {
+  margin: 1rem 0px 0px 1rem;
+} */
 
 .register-body button, .login-body button {
   /* Button won't go to center */
   margin: 1rem auto 0px auto;
+}
+
+/* Join */
+.join-body input[type="number"] {
+  display: block;
 }
