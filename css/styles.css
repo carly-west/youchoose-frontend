@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.options {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn-image {
+  max-width: 200px;
+  background-color: transparent;
+  border: transparent;
+}
+
+.btn-image img {
+  width: 100%;
+}
