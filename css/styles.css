@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital@1&family=Quicksand&display=swap');
 :root {
   --black: #293241;
   --salmon: #F1856A;
@@ -6,9 +7,28 @@
   --dark-blue: #3D5A80;
 }
 
+body, input {
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* You choose header */
+.you-choose-h1 {
+  padding-top: 30%;
+  text-align: center;
+  display: block;
+  width: 100%;
+  font-size: 40px;
+  font-family: 'Chivo', sans-serif;
+  color: var(--dark-blue)
+}
+
+
 body {
+  background-color: var(--ice-blue);
   margin: 0;
   padding: 0;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .options {
@@ -58,13 +78,7 @@ body {
 }
 
 
-/* You choose header */
-.you-choose-h1 {
-  padding-top: 30px;
-  text-align: center;
-  display: block;
-  width: 100%;
-}
+
 
 /* .btn:hover {
   background-color: RoyalBlue;
@@ -103,6 +117,9 @@ a:visited {
   font-size: 1rem;
   border: 1px black solid;
   text-align: center;
+  background-color: var(--light-blue);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -114,8 +131,11 @@ a:visited {
   padding: 1.5rem 0px 1.5rem 0px;
   display: block;
   font-size: 1.5rem;
-  border: 1px black solid;
+  border: 2px black solid;
   text-align: center;
+  border-radius: 5px;
+
+  background-color: var(--light-blue);
 }
 
 /* Index */
@@ -187,14 +207,42 @@ h2 {
 }
 
 
-/* Admin session info */
-.admin-session-info-body, .login-body, .join-body {
-  margin-left: 15%;
-  margin-right: 15%;
-}
-
 /* Dashbaord */
 .dashboard-buttons {
   margin-top: 20%;
+}
+
+
+/* Admin Session */
+#admin-code {
+  font-size: 100px;
+  max-width: 100%;
+  text-align: center;
+  margin: 5% 0px 10% 0px;
+}
+
+#people-joined {
+  font-size: 30px;
+  margin-bottom: 20%;
+  text-align: center;
+}
+
+.admin-code-body .button-reuse {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 30px;
+}
+
+
+
+@media only screen and (min-width: 32.5rem) {
+  body {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
