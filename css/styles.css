@@ -1,3 +1,11 @@
+:root {
+  --black: #293241;
+  --salmon: #F1856A;
+  --ice-blue: #E0FBFC;
+  --light-blue: #98C1D9;
+  --dark-blue: #3D5A80;
+}
+
 body {
   margin: 0;
   padding: 0;
