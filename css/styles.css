@@ -43,8 +43,25 @@ section.top ul {
 
 
 
+/* All links */
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
 
 
+/* Back-button */
+.back-button {
+  width: 4rem;
+  padding: .5rem 0px .5rem 0px;
+  display: block;
+  font-size: 1rem;
+  border: 1px black solid;
+  text-align: center;
+}
 
 /* Index */
 .index-body div {
