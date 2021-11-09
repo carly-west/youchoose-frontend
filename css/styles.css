@@ -39,13 +39,31 @@ body {
   cursor: pointer;
 }
 
+
+/* Admin dropdown */
+.admin-dropdown img{
+  max-width: 30%;
+  float: right;
+
+}
+
 /* Reuseable button */
 .button-reuse {
   display:block;
+  width:100%;
   padding: .5rem 1rem .5rem 1rem;
   font-size: 15px;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+}
+
+
+/* You choose header */
+.you-choose-h1 {
+  padding-top: 30px;
+  text-align: center;
+  display: block;
+  width: 100%;
 }
 
 /* .btn:hover {
@@ -87,13 +105,11 @@ a:visited {
   text-align: center;
 }
 
-/* You choose header */
-.you-choose-h1 {
-  text-align: center;
-}
 
-/* Index */
-.index-body div {
+
+/* General Buttons */
+.common-button {
+  margin: 15% auto 5% auto;
   width: 12rem;
   padding: 1.5rem 0px 1.5rem 0px;
   display: block;
@@ -102,6 +118,7 @@ a:visited {
   text-align: center;
 }
 
+/* Index */
 .login-button {
   margin: 20% auto auto auto;
 }
@@ -123,8 +140,8 @@ a:visited {
 .register-body input[type="password"],
 .login-body input[type="email"], 
 .login-body input[type="password"],
-.join-body input[type="number"] {
-  width: 80%;
+.admin-session-info-body input[type="text"]{
+  width: 100%;
   padding: 12px 20px;
   display: block;
   border: 1px solid #ccc;
@@ -153,4 +170,31 @@ h2 {
 /* Join */
 .join-body input[type="number"] {
   display: block;
+  width: 100%;
+  padding: 12px 20px;
+  display: block;
+  font-size: 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 10px auto 30px auto;
 }
+
+.join-body label {
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+/* Admin session info */
+.admin-session-info-body, .login-body, .join-body {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+/* Dashbaord */
+.dashboard-buttons {
+  margin-top: 20%;
+}
+
