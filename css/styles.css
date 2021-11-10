@@ -1,34 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Chivo:ital@1&family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Chivo:ital@1&family=Quicksand&display=swap");
 :root {
   --black: #293241;
-  --salmon: #F1856A;
-  --ice-blue: #E0FBFC;
-  --light-blue: #98C1D9;
-  --dark-blue: #3D5A80;
+  --salmon: #f1856a;
+  --ice-blue: #e0fbfc;
+  --light-blue: #98c1d9;
+  --dark-blue: #3d5a80;
 }
 
-body, input {
-  font-family: 'Quicksand', sans-serif;
+body,
+input {
+  font-family: "Quicksand", sans-serif;
 }
 
 /* You choose header */
 .you-choose-h1 {
-  padding-top: 30%;
+  padding-top: 20%;
   text-align: center;
   display: block;
   width: 100%;
   font-size: 40px;
-  font-family: 'Chivo', sans-serif;
-  color: var(--dark-blue)
+  font-family: "Chivo", sans-serif;
+  color: var(--dark-blue);
 }
-
 
 body {
   background-color: var(--ice-blue);
-  margin: 0;
+  margin: auto 15%;
   padding: 0;
-  margin-left: 15%;
-  margin-right: 15%;
 }
 
 .options {
@@ -59,26 +57,21 @@ body {
   cursor: pointer;
 }
 
-
 /* Admin dropdown */
-.admin-dropdown img{
+.admin-dropdown img {
   max-width: 30%;
   float: right;
-
 }
 
 /* Reuseable button */
 .button-reuse {
-  display:block;
-  width:100%;
-  padding: .5rem 1rem .5rem 1rem;
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   font-size: 15px;
   /* margin-left: auto; */
   /* margin-right: auto; */
 }
-
-
-
 
 /* .btn:hover {
   background-color: RoyalBlue;
@@ -89,8 +82,6 @@ section.top ul {
   padding: 0;
   margin: 0;
 }
-
-
 
 /* All links */
 a {
@@ -112,17 +103,14 @@ a:visited {
 /* Back-button */
 .back-button {
   width: 4rem;
-  padding: .5rem 0px .5rem 0px;
+  padding: 0.5rem 0px 0.5rem 0px;
   display: block;
   font-size: 1rem;
   border: 1px black solid;
   text-align: center;
   background-color: var(--light-blue);
-  margin-left: auto;
-  margin-right: auto;
+  margin: 30px auto 10px;
 }
-
-
 
 /* General Buttons */
 .common-button {
@@ -153,14 +141,12 @@ a:visited {
   margin: 20% auto 0px auto;
 }
 
-
-
 /* Register and login*/
-.register-body input[type="email"], 
+.register-body input[type="email"],
 .register-body input[type="password"],
-.login-body input[type="email"], 
+.login-body input[type="email"],
 .login-body input[type="password"],
-.admin-session-info-body input[type="text"]{
+.admin-session-info-body input[type="text"] {
   width: 100%;
   padding: 12px 20px;
   display: block;
@@ -182,7 +168,8 @@ h2 {
   margin: 1rem 0px 0px 1rem;
 } */
 
-.register-body button, .login-body button {
+.register-body button,
+.login-body button {
   /* Button won't go to center */
   margin: 1rem auto 0px auto;
 }
@@ -203,15 +190,12 @@ h2 {
 .join-body label {
   margin-left: auto;
   margin-right: auto;
-
 }
-
 
 /* Dashbaord */
 .dashboard-buttons {
   margin-top: 20%;
 }
-
 
 /* Admin Session */
 #admin-code {
@@ -236,13 +220,13 @@ h2 {
   font-size: 30px;
 }
 
-
-
 @media only screen and (min-width: 32.5rem) {
   body {
     max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+  }
+
+  .you-choose-h1 {
+    padding-top: 10%;
   }
 }
-
