@@ -8,23 +8,30 @@
   </head>
 
   <body class="admin-session-info-body">
-    <div class="admin-dropdown">
-      <!-- I don't know how to add a dropdown on an image -->
-      <a class="admin-button">
-        <img src="images/user-button.png" />
-      </a>
-    </div>
+    <main>
+      <div class="admin-dropdown">
+        <!-- I don't know how to add a dropdown on an image -->
+        <a class="admin-button">
+          <img src="images/user-button.png" />
+        </a>
+      </div>
 
-    <h1 class="you-choose-h1">You Choose</h1>
-    <form>
-      <!-- This will have either the radius or zip code -->
-      <h2>Restaurant Location:</h2>
-      <label for="zip-code">Zip Code</label>
-      <input type="text" id="zip-code" name="zip-code" placeholder="Zip Code" />
+      <h1 class="you-choose-h1">You Choose</h1>
+      <form>
+        <!-- This will have either the radius or zip code -->
+        <h2>Restaurant Location:</h2>
+        <label for="zip-code">Zip Code</label>
+        <input
+          type="text"
+          id="zip-code"
+          name="zip-code"
+          placeholder="Zip Code"
+        />
 
-      <label for="radius">Radius</label>
-      <input type="text" id="radius" name="radius" placeholder="Radius(m)" />
-      <input type="submit" value="Submit" class="button-reuse" />
-    </form>
+        <label for="radius">Radius</label>
+        <input type="text" id="radius" name="radius" placeholder="Radius(m)" />
+        <input type="submit" value="Submit" class="button-reuse" />
+      </form>
+    </main>
   </body>
 </html>
