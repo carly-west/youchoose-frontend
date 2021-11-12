@@ -3,7 +3,7 @@ import { alertMessage, qs, setLocalStorage } from "./utils.js";
 
 export default class Admin {
   constructor(outputSelector) {
-    // maybe we don't need the main here, then.
+    // maybe we don't need the main here, then?
     this.mainElement = qs(outputSelector);
     this.token = null;
     this.orders = null;
