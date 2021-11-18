@@ -41,7 +41,7 @@ export default class Admin {
     try {
       const message = await this.services.registerRequest(creds);
       // console.log(this.token);
-      location.href = "/login.html";
+      // location.href = "/login.html";
       return await message;
     } catch (err) {
       // alertMessage(err.message.message);
