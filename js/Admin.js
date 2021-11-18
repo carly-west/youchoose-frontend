@@ -21,7 +21,7 @@ export default class Admin {
     setClick(this.identifier, () => {
       this.handleClick();
     });
-    // setClickforAll(".fa-eye", () => this.showPassword());
+    setClickforAll(".fa-eye", () => this.showPassword());
   }
 
   async login(creds) {
