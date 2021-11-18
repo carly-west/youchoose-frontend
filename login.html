@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
-    <script src="js/Admin.js" type="module"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="js/login.js" type="module"></script>
     <title>Login</title>
   </head>
 
@@ -16,7 +20,8 @@
         <label for="email">Email</label>
         <input name="email" type="email" id="email" />
         <label for="password">Password</label>
-        <input name="password" type="password" id="password" />
+        <input name="password" type="password" id="password" class="password" />
+        <button class="btn"><i class="fa fa-eye"></i></button><br />
 
         <input id="login" type="submit" value="Login" class="button-reuse" />
       </form>

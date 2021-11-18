@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
-    <script src="js/Admin.js" type="module"></script>
+    <script src="js/register.js" type="module"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Register</title>
   </head>
 
@@ -17,9 +21,16 @@
         <label for="email">Email</label>
         <input type="email" name="name" id="email" />
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" />
+        <input type="password" name="password" id="password" class="password" />
+        <button class="btn"><i class="fa fa-eye"></i></button><br />
         <label for="comfirmPassword">Confirm Password</label>
-        <input type="password" name="confrimPassword" id="confirmPassword" />
+        <input
+          type="password"
+          name="confirmPassword"
+          id="confirmPassword"
+          class="password"
+        />
+        <button class="btn"><i class="fa fa-eye"></i></button><br />
         <input type="submit" id="register" value="Join" class="button-reuse" />
       </form>
 
