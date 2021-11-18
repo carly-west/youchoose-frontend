@@ -12,6 +12,10 @@ input {
   font-family: "Quicksand", sans-serif;
 }
 
+.hidden {
+  display: none;
+}
+
 /* You choose header */
 .you-choose-h1 {
   padding-top: 20%;
