@@ -1,4 +1,3 @@
-
 // wrapper for querySelector...returns matching element
 export function qs(selector, parent = document) {
   return parent.querySelector(selector);
@@ -6,19 +5,19 @@ export function qs(selector, parent = document) {
 // or a more concise version if you are into that sort of thing:
 // export const qs = (selector, parent = document) => parent.querySelector(selector);
 
-// retrieve data from localstorage
-export function getLocalStorage(key) {
-  let currentCart = JSON.parse(localStorage.getItem(key));
-  if (!currentCart) {
-    currentCart = [];
+// retrieve data from sessionstorage
+export function getSessionStorage(key) {
+  let token = JSON.parse(sessionStorage.getItem(key));
+  if (!token) {
+    token = [];
   }
-  return currentCart;
+  return token;
 }
-// save data to local storage
-export function setLocalStorage(key, data) {
-  // let currentCart = getLocalStorage(key);
-  // currentCart.push(data);
-  localStorage.setItem(key, JSON.stringify(data));
+// save data to session storage
+export function setSessionStorage(key, data) {
+  // let token = getSessionStorage(key);
+  // token.push(data);
+  sessionStorage.setItem(key, JSON.stringify(data));
 }
 // set a listener for both touchend and click
 export function setClick(selector, callback) {
@@ -119,7 +118,7 @@ export function alertMessage(message, error = true, scroll = true) {
   if (!error) {
     alert.classList.add("add-alert");
   }
-  // set the contents. You should have a message and an X or something the user can click on to remove
+  // set the contents.
   const content = `<p> ${message} </p>
                   <button>X</button>`;
 
@@ -128,7 +127,6 @@ export function alertMessage(message, error = true, scroll = true) {
   // if they did then remove the child
   alert.addEventListener("click", function (e) {
     if (e.target.tagName === "BUTTON") {
-      // how can we tell if they clicked on our X or on something else?  hint: check out e.target.tagName or e.target.innerText
       console.log(e.target.tagName);
       main.removeChild(this);
     }
@@ -136,7 +134,6 @@ export function alertMessage(message, error = true, scroll = true) {
   // add the alert to the top of main
   const main = document.querySelector("main");
   main.prepend(alert);
-  // make sure they see the alert by scrolling to the top of the window
-  //we may not always want to do this...so default to scroll=true, but allow it to be passed in and overridden.
+  // to show the alert at the top of the window
   if (scroll) window.scrollTo(0, 0);
 }

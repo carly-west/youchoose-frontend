@@ -220,6 +220,32 @@ h2 {
   font-size: 30px;
 }
 
+.alert {
+  background-color: #f0a968;
+  border: 2px solid #f59735;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.25em 0.5em;
+  padding: 0 0.5em;
+  color: #303030;
+}
+
+.add-alert {
+  max-width: 500px;
+  margin: 10px auto 0;
+}
+
+.alert p {
+  margin: 10px;
+}
+
+.alert button {
+  margin: 0 10px;
+  padding: 0;
+  background-color: transparent;
+  color: #303030;
+}
+
 @media only screen and (min-width: 32.5rem) {
   body {
     max-width: 500px;

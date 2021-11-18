@@ -1,51 +1,36 @@
 import ExternalServices from "./externalServices.js";
-import { alertMessage, qs, setLocalStorage } from "./utils.js";
+import {
+  alertMessage,
+  qs,
+  setSessionStorage,
+  setClick,
+  setClickforAll,
+} from "./utils.js";
 
 export default class Admin {
-  constructor(outputSelector) {
-    // maybe we don't need the main here, then?
-    this.mainElement = qs(outputSelector);
+  constructor(identifier) {
+    this.identifier = identifier;
     this.token = null;
-    this.orders = null;
     this.services = new ExternalServices();
+    this.email = null;
+    this.password = null;
+    this.confirmPassword = null;
   }
 
   init() {
-    // this.mainElement.append(this.showLogin());
-    if (location.pathname == "/youchoose-frontend/login.html") {
-      qs("#login").addEventListener("click", (e) => {
-        e.preventDefault();
-        const email = qs("#email").value;
-        const password = qs("#password").value;
-        const creds = {
-          email: email,
-          password: password,
-        };
-        this.login(creds);
-      });
-    } else if (location.pathname == "/youchoose-frontend/register.html") {
-      qs("#register").addEventListener("click", (e) => {
-        e.preventDefault();
-        const email = qs("#email").value;
-        const password = qs("#password").value;
-        const confirmPassword = qs("#confirmPassword").value;
-        const creds = {
-          email: email,
-          password: password,
-          confirmPassword: confirmPassword,
-        };
-        const message = this.register(creds);
-        // alertMessage(message);
-      });
-    }
+    setClick(this.identifier, () => {
+      this.handleClick();
+    });
+    // setClickforAll(".fa-eye", () => this.showPassword());
   }
 
   async login(creds) {
     try {
       this.token = await this.services.loginRequest(creds);
       console.log(this.token);
-      setLocalStorage("userToken", this.token);
-      location.href = "/youchoose-frontend/admin-dashboard.html";
+      setSessionStorage("userToken", this.token);
+      // for testing purposes I have commented the line below
+      // location.href = "/admin-dashboard.html";
     } catch (err) {
       // alertMessage(err.message.message);
       console.log(err);
@@ -56,26 +41,57 @@ export default class Admin {
     try {
       const message = await this.services.registerRequest(creds);
       // console.log(this.token);
-      location.href = "/youchoose-frontend/login.html";
+      // location.href = "/login.html";
       return await message;
     } catch (err) {
       // alertMessage(err.message.message);
       console.log(err);
     }
   }
-}
 
-// showLogin() {
-//     const form = document.createElement("form");
-//     form.innerHTML = `
-//         <label for="email">Email:</label>
-//         <input type="email" id="email" name="email">
-//         <label for="password">Password:</label>
-//         <input type="password" id="password" name="password">
-//         <button id="login">Login</button>
-//     `;
-//     return form;
-// }
+  handleClick() {
+    this.email = qs("#email").value;
+    this.password = qs("#password").value;
+
+    switch (this.identifier) {
+      case "#login":
+        const creds = {
+          email: this.email,
+          password: this.password,
+        };
+        this.login(creds);
+        break;
+      case "#register":
+        this.confirmPassword = qs("#confirmPassword").value;
+        if (this.password === this.confirmPassword) {
+          const creds = {
+            email: this.email,
+            password: this.password,
+            confirmPassword: this.confirmPassword,
+          };
+          const message = this.register(creds);
+        } else {
+          alertMessage("Please write the same password.");
+        }
+
+        break;
+      default:
+        break;
+    }
+  }
+
+  showPassword() {
+    const password = document.querySelectorAll(".password");
+    console.log(password);
+    password.forEach((item) => {
+      if (item.type === "password") {
+        item.type = "text";
+      } else {
+        item.type = "password";
+      }
+    });
+  }
+}
 
 // async showOrders() {
 //     try {
@@ -104,6 +120,3 @@ export default class Admin {
 //         alertMessage(err.message.message);
 //     }
 // }
-
-const myAdmin = new Admin("main");
-myAdmin.init();
