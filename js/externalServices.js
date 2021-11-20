@@ -65,7 +65,7 @@ export default class ExternalServices {
       console.log(token);
       return token;
     } catch (err) {
-      alertMessage(err.message.message);
+      alertMessage(err.message.message.statusCode);
     }
   }
 
@@ -86,7 +86,7 @@ export default class ExternalServices {
       // console.log(token);
       return message;
     } catch (err) {
-      alertMessage(err.message.message);
+      alertMessage(err.message.message.data[0].msg);
     }
   }
 
