@@ -21,7 +21,7 @@ export default class Admin {
     setClick(this.identifier, () => {
       this.handleClick();
     });
-    setClickforAll(".fa-eye", () => this.showPassword());
+    setClickforAll(".fa-eye", (e) => this.showPassword(e));
   }
 
   async login(creds) {
@@ -80,16 +80,23 @@ export default class Admin {
     }
   }
 
-  showPassword() {
-    const password = document.querySelectorAll(".password");
+  showPassword(e) {
+    const id = e.id;
+    let password = "";
+    switch (id) {
+      case "password":
+        password = document.querySelector("#password");
+        break;
+      case "confirmPassword":
+        password = document.querySelector("#confirmPassword");
+        break;
+    }
     console.log(password);
-    password.forEach((item) => {
-      if (item.type === "password") {
-        item.type = "text";
-      } else {
-        item.type = "password";
-      }
-    });
+    if (password.type === "password") {
+      password.type = "text";
+    } else {
+      password.type = "password";
+    }
   }
 }
 

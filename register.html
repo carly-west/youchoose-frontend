@@ -1,44 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <script src="js/register.js" type="module"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <title>Register</title>
-  </head>
 
-  <body class="register-body">
-    <main>
-      <h1 class="you-choose-h1">You Choose</h1>
-      <h2>Register</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="js/register.js" type="module"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>Register</title>
+</head>
 
-      <form>
-        <label for="email">Email</label>
-        <input type="email" name="name" id="email" />
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" class="password" />
-        <button type="button" class="btn"><i class="fa fa-eye"></i></button
-        ><br />
-        <label for="confirmPassword">Confirm Password</label>
-        <input
-          type="password"
-          name="confirmPassword"
-          id="confirmPassword"
-          class="password"
-        />
-        <button type="button" class="btn"><i class="fa fa-eye"></i></button
-        ><br />
-        <input type="submit" id="register" value="Join" class="button-reuse" />
-      </form>
+<body class="register-body">
+  <main>
+    <h1 class="you-choose-h1">You Choose</h1>
+    <h2>Register</h2>
 
-      <a href="index.html">
-        <div class="back-button">Back</div>
-      </a>
-    </main>
-  </body>
+    <form>
+      <label for="email">Email</label>
+      <input type="email" name="name" id="email" />
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" />
+      <button type="button" class="btn"><i class="fa fa-eye" id="password"></i></button><br />
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" name="confirmPassword" id="confirmPassword" />
+      <button type="button" class="btn"><i class="fa fa-eye" id="confirmPassword"></i></button><br />
+      <input type="submit" id="register" value="Join" class="button-reuse" />
+    </form>
+
+    <a href="index.html">
+      <div class="back-button">Back</div>
+    </a>
+  </main>
+</body>
+
 </html>
