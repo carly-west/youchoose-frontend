@@ -49,7 +49,6 @@ export default class ExternalServices {
   // }
 
   async loginRequest(creds) {
-    // try {
     const options = {
       method: "POST",
       headers: {
@@ -65,9 +64,6 @@ export default class ExternalServices {
     const token = response.token;
     console.log(token);
     return token;
-    // } catch (err) {
-    //   alertMessage(err.message.message.statusCode);
-    // }
   }
 
   async registerRequest(creds) {
@@ -84,7 +80,6 @@ export default class ExternalServices {
       );
 
       const message = response.message;
-      // console.log(token);
       return message;
     } catch (err) {
       alertMessage(err.message.message.data[0].msg);

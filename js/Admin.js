@@ -31,7 +31,6 @@ export default class Admin {
       this.token = await this.services.loginRequest(creds);
       console.log(this.token);
       setSessionStorage("userToken", this.token);
-      // for testing purposes I have commented the line below
       location.href = "/admin-dashboard.html";
     } catch (err) {
       console.log(err.message);
