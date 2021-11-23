@@ -8,9 +8,6 @@ export function qs(selector, parent = document) {
 // retrieve data from sessionstorage
 export function getSessionStorage(key) {
   let token = JSON.parse(sessionStorage.getItem(key));
-  if (!token) {
-    token = [];
-  }
   return token;
 }
 // save data to session storage

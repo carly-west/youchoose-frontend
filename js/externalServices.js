@@ -49,24 +49,25 @@ export default class ExternalServices {
   // }
 
   async loginRequest(creds) {
-    try {
-      const options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(creds),
-      };
-      const response = await fetch(baseURL + "login", options).then(
-        convertToJson
-      );
-      console.log(response);
-      const token = response.token;
-      console.log(token);
-      return token;
-    } catch (err) {
-      alertMessage(err.message.message.statusCode);
-    }
+    // try {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(creds),
+    };
+    const response = await fetch(baseURL + "login", options).then(
+      convertToJson
+    );
+    console.log(response);
+
+    const token = response.token;
+    console.log(token);
+    return token;
+    // } catch (err) {
+    //   alertMessage(err.message.message.statusCode);
+    // }
   }
 
   async registerRequest(creds) {

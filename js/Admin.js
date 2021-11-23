@@ -35,6 +35,7 @@ export default class Admin {
       location.href = "/admin-dashboard.html";
     } catch (err) {
       console.log(err.message);
+      alertMessage(err.message.error);
     }
   }
 
