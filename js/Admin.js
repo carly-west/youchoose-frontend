@@ -5,6 +5,7 @@ import {
   setSessionStorage,
   setClick,
   setClickforAll,
+  getSessionStorage,
 } from "./utils.js";
 
 export default class Admin {
