@@ -22,14 +22,24 @@
         <input type="email" name="name" id="email" />
         <label for="password">Password</label>
         <div class="button-inside">
-          <input type="password" name="password" id="password" />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            pattern="[A-Za-z].{5,}"
+          />
           <button type="button" class="btn show-pass">
             <i class="fa fa-eye" id="password"></i>
           </button>
         </div>
         <label for="confirmPassword">Confirm Password</label>
         <div class="button-inside">
-          <input type="password" name="confirmPassword" id="confirmPassword" />
+          <input
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+            pattern="[A-Za-z].{5,}"
+          />
           <button type="button" class="btn show-pass">
             <i class="fa fa-eye" id="confirmPassword"></i>
           </button>

@@ -19,7 +19,8 @@ export default class Admin {
   }
 
   init() {
-    setClick(this.identifier, () => {
+    qs(this.identifier).addEventListener("submit", (e) => {
+      e.preventDefault();
       this.handleClick();
     });
     setClickforAll(".fa-eye", (e) => this.showPassword(e));
