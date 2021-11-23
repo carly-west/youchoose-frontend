@@ -5,6 +5,7 @@ import {
   setSessionStorage,
   setClick,
   setClickforAll,
+  getSessionStorage,
 } from "./utils.js";
 
 export default class Admin {
@@ -21,7 +22,7 @@ export default class Admin {
     setClick(this.identifier, () => {
       this.handleClick();
     });
-    setClickforAll(".fa-eye", () => this.showPassword());
+    setClickforAll(".fa-eye", (e) => this.showPassword(e));
   }
 
   async login(creds) {
@@ -30,26 +31,24 @@ export default class Admin {
       console.log(this.token);
       setSessionStorage("userToken", this.token);
       // for testing purposes I have commented the line below
-      // location.href = "/admin-dashboard.html";
+      location.href = "/admin-dashboard.html";
     } catch (err) {
-      // alertMessage(err.message.message);
-      console.log(err);
+      console.log(err.message);
     }
   }
 
   async register(creds) {
     try {
       const message = await this.services.registerRequest(creds);
-      // console.log(this.token);
+      console.log(this.message);
       // location.href = "/login.html";
-      return await message;
+      return message;
     } catch (err) {
-      // alertMessage(err.message.message);
-      console.log(err);
+      console.log(err.message);
     }
   }
 
-  handleClick() {
+  async handleClick() {
     this.email = qs("#email").value;
     this.password = qs("#password").value;
 
@@ -59,7 +58,7 @@ export default class Admin {
           email: this.email,
           password: this.password,
         };
-        this.login(creds);
+        await this.login(creds);
         break;
       case "#register":
         this.confirmPassword = qs("#confirmPassword").value;
@@ -69,7 +68,9 @@ export default class Admin {
             password: this.password,
             confirmPassword: this.confirmPassword,
           };
-          const message = this.register(creds);
+          const message = await this.register(creds);
+          // location.href = "/login.html";
+          alertMessage(message);
         } else {
           alertMessage("Please write the same password.");
         }
@@ -80,16 +81,23 @@ export default class Admin {
     }
   }
 
-  showPassword() {
-    const password = document.querySelectorAll(".password");
+  showPassword(e) {
+    const id = e.id;
+    let password = "";
+    switch (id) {
+      case "password":
+        password = document.querySelector("#password");
+        break;
+      case "confirmPassword":
+        password = document.querySelector("#confirmPassword");
+        break;
+    }
     console.log(password);
-    password.forEach((item) => {
-      if (item.type === "password") {
-        item.type = "text";
-      } else {
-        item.type = "password";
-      }
-    });
+    if (password.type === "password") {
+      password.type = "text";
+    } else {
+      password.type = "password";
+    }
   }
 }
 

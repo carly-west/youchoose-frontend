@@ -21,18 +21,19 @@
         <label for="email">Email</label>
         <input type="email" name="name" id="email" />
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" class="password" />
-        <button type="button" class="btn"><i class="fa fa-eye"></i></button
-        ><br />
+        <div class="button-inside">
+          <input type="password" name="password" id="password" />
+          <button type="button" class="btn show-pass">
+            <i class="fa fa-eye" id="password"></i>
+          </button>
+        </div>
         <label for="confirmPassword">Confirm Password</label>
-        <input
-          type="password"
-          name="confirmPassword"
-          id="confirmPassword"
-          class="password"
-        />
-        <button type="button" class="btn"><i class="fa fa-eye"></i></button
-        ><br />
+        <div class="button-inside">
+          <input type="password" name="confirmPassword" id="confirmPassword" />
+          <button type="button" class="btn show-pass">
+            <i class="fa fa-eye" id="confirmPassword"></i>
+          </button>
+        </div>
         <input type="submit" id="register" value="Join" class="button-reuse" />
       </form>
 
