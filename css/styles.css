@@ -28,9 +28,19 @@ input {
 }
 
 body {
-  background-color: var(--ice-blue);
-  margin: auto 15%;
   padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  background-color: var(--ice-blue);
+  padding: 30px;
 }
 
 .options {
@@ -252,11 +262,32 @@ h2 {
 
 @media only screen and (min-width: 32.5rem) {
   body {
-    max-width: 500px;
+    max-width: 80%;
     margin: auto;
+    /* Why isn't this working */
+    background-color: var(--dark-blue);
+  }
+
+  html, main {
+    height: 100vh;
   }
 
   .you-choose-h1 {
     padding-top: 10%;
+  }
+}
+
+
+@media only screen and (min-width: 64rem) {
+
+  body {
+    max-width: 50%;
+  }
+
+
+  .button-reuse {
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
