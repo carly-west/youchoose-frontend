@@ -86,6 +86,18 @@ export default class ExternalServices {
     }
   }
 
+  async validateRoom(roomId) {
+    // try {
+    const response = await fetch(baseURL + `roomExists?roomId=${roomId}`).then(
+      convertToJson
+    );
+    console.log(response);
+    return response;
+    // } catch (err) {
+    //   alertMessage(await err.message.errors[0].msg);
+    // }
+  }
+
   // async getOrders(token) {
   //     try {
   //         const options = {

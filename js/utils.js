@@ -95,17 +95,6 @@ export async function loadHeaderFooter() {
   renderCartSuperscript();
 }
 
-export function playAnimation() {
-  const cart = qs("#cart-superscript");
-  if (cart.classList.contains("cart-animation")) {
-    cart.classList.remove("cart-animation");
-    cart.classList.add("cart-animation2");
-  } else {
-    cart.classList.add("cart-animation");
-    cart.classList.remove("cart-animation2");
-  }
-}
-
 export function alertMessage(message, error = true, scroll = true) {
   // create element to hold our alert
   const alert = document.createElement("div");
@@ -122,12 +111,19 @@ export function alertMessage(message, error = true, scroll = true) {
   alert.innerHTML = content;
   // add a listener to the alert to see if they clicked on the X
   // if they did then remove the child
-  alert.addEventListener("click", function (e) {
+
+  alert.addEventListener("touchend", function (e) {
+    e.preventDefault();
     if (e.target.tagName === "BUTTON") {
-      console.log(e.target.tagName);
       main.removeChild(this);
     }
   });
+  alert.addEventListener("click", function (e) {
+    if (e.target.tagName === "BUTTON") {
+      main.removeChild(this);
+    }
+  });
+
   // add the alert to the top of main
   const main = document.querySelector("main");
   main.prepend(alert);
