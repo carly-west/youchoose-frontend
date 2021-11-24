@@ -19,14 +19,21 @@
 
       <form id="register">
         <label for="email">Email</label>
-        <input type="email" name="name" id="email" />
+        <input
+          type="email"
+          name="name"
+          id="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          required
+        />
         <label for="password">Password</label>
         <div class="button-inside">
           <input
             type="password"
             name="password"
             id="password"
-            pattern="[A-Za-z].{5,}"
+            pattern="[A-Za-z0-9].{5,}"
+            title="At least 5 characters."
           />
           <button type="button" class="btn show-pass">
             <i class="fa fa-eye" id="password"></i>
@@ -38,13 +45,15 @@
             type="password"
             name="confirmPassword"
             id="confirmPassword"
-            pattern="[A-Za-z].{5,}"
+            pattern="[A-Za-z0-9].{5,}"
+            title="At least 5 characters."
+            required
           />
           <button type="button" class="btn show-pass">
             <i class="fa fa-eye" id="confirmPassword"></i>
           </button>
         </div>
-        <input type="submit" value="Join" class="button-reuse" />
+        <input type="submit" value="Join" class="button-reuse" required />
       </form>
 
       <a href="index.html">
