@@ -39,9 +39,6 @@ socket.on("new-join", (count) => {
 });
 
 //start session when start button is clicked
-// qs("#start").addEventListener("click", () => {
-//   socket.emit("start-session", roomId);
-// });
 setClick("#start", () => {
   socket.emit("start-session", roomId);
 });
