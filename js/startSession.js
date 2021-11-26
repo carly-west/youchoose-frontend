@@ -1,6 +1,6 @@
 import { getSessionStorage } from './utils.js';
 
-const serverUrl = 'http://localhost:3000';
+const serverUrl = 'https://you-choose-api.herokuapp.com';
 let authToken = getSessionStorage('userToken');
 //listen for button click
 document.getElementById('start-session-btn').addEventListener('click', () => {

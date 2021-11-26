@@ -1,6 +1,6 @@
 import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
 // const serverUrl = "https://you-choose-api.herokuapp.com/";
-const serverUrl = "http://localhost:3000";
+const serverUrl = "https://you-choose-api.herokuapp.com";
 
 const params = new URLSearchParams(window.location.search);
 const roomId = params.get("room");
