@@ -13,13 +13,15 @@ document.getElementById('start-session-btn').addEventListener('click', () => {
 				let lon = position.coords.longitude;
 				//get value from radius input - if undefined don't set it
 				let radius = document.getElementById('radius').value;
-
 				//send request to startSession
 				const body = {
 					lat: lat,
 					lon: lon,
-					radius: radius,
 				};
+				// since radius is optional, check if radius exists before sending this request.
+				if (radius) {
+					body.radius = radius;
+				}
 
 				fetch(serverUrl + '/createSession', {
 					method: 'POST',
@@ -42,7 +44,7 @@ document.getElementById('start-session-btn').addEventListener('click', () => {
                         let roomId = roomInfo.roomId;
 
                         //redirect to choice page
-                        window.location = 'choice.html'  + "?room=" + roomId
+						window.location = 'choice.html' + "?room=" + roomId + "&creator=true";
 					})
 					.catch((err) => {
 						console.log(err);

@@ -1,8 +1,17 @@
 import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
-// const serverUrl = "https://you-choose-api.herokuapp.com/";
+import { getSessionStorage } from './utils.js';
+let authToken = getSessionStorage('userToken');
+
 const serverUrl = "https://you-choose-api.herokuapp.com";
 
 const params = new URLSearchParams(window.location.search);
+
+const creator = params.get("creator");
+
+if (creator) {
+  document.getElementById('start').type="button"
+}
+
 const roomId = params.get("room");
 document.getElementById('admin-code').innerHTML = roomId;
 
@@ -88,6 +97,7 @@ document.querySelector("#dislike").addEventListener("click", (e) => {
   });
 });
 
+let restaurantPicks;
 //runs when all restaurants have been looped through
 socket.on("finish", (results) => {
   //todo: load waiting screen
@@ -96,9 +106,42 @@ socket.on("finish", (results) => {
   let resultsDiv = document.getElementById("results-wrapper");
   resultsDiv.classList.remove("hidden");
   document.getElementById("results").innerHTML = `Your top 3: ${results}`;
+
+  if (creator) {
+    document.getElementById('saveResults').type="button"
+  }
+  restaurantPicks = results
+
 });
 
 function showWaitingScreen() {
   document.querySelector("#waiting-screen").classList.remove("hidden");
   document.querySelector("#restaurant-info-wrapper").classList.add("hidden");
 }
+
+document.getElementById('saveResults').addEventListener('click', () => {
+
+  const body = {
+    top3: restaurantPicks
+  }
+  fetch(serverUrl + '/saveResult', {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: authToken.toString()
+    },
+    body: JSON.stringify(body)
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('unable to save results')
+      }
+    })
+    .then(result => {
+      console.log(result)
+    })
+})
+

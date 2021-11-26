@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="js/room.js" type="module"></script>
     <!-- <script src="js/verifyAccess.js" type="module"></script> -->
-
   </head>
 
   <body>
@@ -26,7 +25,7 @@
   
         <p  id="people-joined"><span id="userCount"></span> people joined</p>
   
-        <input type="submit" value="Start" class="button-reuse" id="start"/>
+        <input type="hidden" value="Start" class="button-reuse" id="start"/>
       </main>
     </div>
 
@@ -52,9 +51,10 @@
     <div id="results-wrapper" class="hidden">
       <h1 class="you-choose-h1">You Choose</h1>
       <h2>Results</h2>
-      <ul id="results">
+      <ul id="results"></ul>
 
       <!-- Placeholder for now -->
+      <input type="hidden" value="Save Results" class="button-reuse" id="saveResults"/>
     </div>
 
   </body>
