@@ -71,24 +71,19 @@ export default class ExternalServices {
   }
 
   async registerRequest(creds) {
-    try {
-      const options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(creds),
-      };
-      const response = await fetch(baseURL + "signup", options).then(
-        convertToJson
-      );
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(creds),
+    };
+    const response = await fetch(baseURL + "signup", options).then(
+      convertToJson
+    );
 
-      const message = response.message;
-      // console.log(token);
-      return message;
-    } catch (err) {
-      alertMessage(err.message.message.data[0].msg);
-    }
+    const message = response.message;
+    return message;
   }
 
   // async getOrders(token) {

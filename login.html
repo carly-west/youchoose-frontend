@@ -18,14 +18,20 @@
       <h2>Login</h2>
       <form id="login">
         <label for="email">Email</label>
-        <input name="email" type="email" id="email" required />
+        <input
+          name="email"
+          type="email"
+          id="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          required
+        />
         <label for="password">Password</label>
         <div class="button-inside">
           <input
             name="password"
             type="password"
             id="password"
-            pattern="[A-Za-z].{5,}"
+            pattern="[A-Za-z0-9].{5,}"
             title="At least 5 characters."
             required
           />
