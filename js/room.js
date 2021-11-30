@@ -1,19 +1,21 @@
 import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
-import { getSessionStorage } from './utils.js';
-let authToken = getSessionStorage('userToken');
+import { qs, setClick, getSessionStorage } from "./utils.js";
 
-const serverUrl = "https://you-choose-api.herokuapp.com";
+let authToken = getSessionStorage("userToken");
+
+const serverUrl = "https://you-choose-api.herokuapp.com/";
 
 const params = new URLSearchParams(window.location.search);
 
 const creator = params.get("creator");
 
 if (creator) {
-  document.getElementById('start').type="button"
+  qs("#start").type = "button";
 }
 
 const roomId = params.get("room");
-document.getElementById('admin-code').innerHTML = roomId;
+
+qs("#admin-code").innerHTML = roomId;
 
 var socket = io.connect(serverUrl, { query: { roomId: roomId } });
 
@@ -45,19 +47,19 @@ socket.on("joinConfirm", (roomId) => {
 
 //runs when the user count is updated.
 socket.on("new-join", (count) => {
-  document.getElementById("userCount").textContent = count;
+  qs("#userCount").textContent = count;
 });
 
 //start session when start button is clicked
-document.getElementById("start").addEventListener("click", () => {
+setClick("#start", () => {
   socket.emit("start-session", roomId);
 });
 
 //runs when a room is successfully started
 socket.on("room-start-success", (msg) => {
   //TODO: re-render page
-  document.querySelector(".admin-code-body").classList.add("hidden");
-  document.querySelector("#restaurant-info-wrapper").classList.remove("hidden");
+  qs(".admin-code-body").classList.add("hidden");
+  qs("#restaurant-info-wrapper").classList.remove("hidden");
   console.log(msg);
 });
 
@@ -66,15 +68,13 @@ socket.on("nextRestaurant", (restaurant) => {
   //load restaurant data for user to see
   currentRestaurant = restaurant;
   console.log(restaurant);
-  document.querySelector("#waiting-screen").classList.add("hidden");
-  document.querySelector("#restaurant-info-wrapper").classList.remove("hidden");
-
-  document.querySelector("#restaurant-name").textContent =
-    restaurant.restaurant_name;
+  qs("#waiting-screen").classList.add("hidden");
+  qs("#restaurant-info-wrapper").classList.remove("hidden");
+  qs("#restaurant-name").textContent = restaurant.restaurant_name;
 });
 
-//send a "like" to the server.
-document.querySelector("#like").addEventListener("click", (e) => {
+// send a "like" to the server.
+setClick("#like", (e) => {
   //TODO: load waiting screen
   console.log("like");
   showWaitingScreen();
@@ -86,7 +86,7 @@ document.querySelector("#like").addEventListener("click", (e) => {
 });
 
 //send a "dislike" to the server
-document.querySelector("#dislike").addEventListener("click", (e) => {
+setClick("#dislike", (e) => {
   //TODO: load waiting screen
   console.log("dislike");
   showWaitingScreen();
@@ -98,50 +98,48 @@ document.querySelector("#dislike").addEventListener("click", (e) => {
 });
 
 let restaurantPicks;
+
 //runs when all restaurants have been looped through
 socket.on("finish", (results) => {
   //todo: load waiting screen
   console.log("session finished");
-  document.querySelector("#waiting-screen").classList.add("hidden");
-  let resultsDiv = document.getElementById("results-wrapper");
+  qs("#waiting-screen").classList.add("hidden");
+  let resultsDiv = qs("#results-wrapper");
   resultsDiv.classList.remove("hidden");
-  document.getElementById("results").innerHTML = `Your top 3: ${results}`;
+  qs("#results").innerHTML = `Your top 3: ${results}`;
 
   if (creator) {
-    document.getElementById('saveResults').type="button"
+    qs("#saveResults").type = "button";
   }
-  restaurantPicks = results
-
+  restaurantPicks = results;
 });
 
 function showWaitingScreen() {
-  document.querySelector("#waiting-screen").classList.remove("hidden");
-  document.querySelector("#restaurant-info-wrapper").classList.add("hidden");
+  qs("#waiting-screen").classList.remove("hidden");
+  qs("#restaurant-info-wrapper").classList.add("hidden");
 }
 
-document.getElementById('saveResults').addEventListener('click', () => {
-
+setClick("#saveResults", () => {
   const body = {
-    top3: restaurantPicks
-  }
-  fetch(serverUrl + '/saveResult', {
-    method: 'POST',
-    mode: 'cors',
+    top3: restaurantPicks,
+  };
+  fetch(serverUrl + "/saveResult", {
+    method: "POST",
+    mode: "cors",
     headers: {
-      'Content-Type': 'application/json',
-      Authorization: authToken.toString()
+      "Content-Type": "application/json",
+      Authorization: authToken.toString(),
     },
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
   })
     .then((response) => {
       if (response.ok) {
         return response.json();
       } else {
-        throw new Error('unable to save results')
+        throw new Error("unable to save results");
       }
     })
-    .then(result => {
-      console.log(result)
-    })
-})
-
+    .then((result) => {
+      console.log(result);
+    });
+});
