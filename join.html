@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <title>Join</title>
-    <script src="js/join.js" type="module"></script>
-  </head>
 
-  <body class="join-body">
-    <main>
-      <h1 class="you-choose-h1">You Choose</h1>
-        <label for="enter-key">Enter Key</label>
-        <input type="number" id="enter-key"/>
-        <button class="button-reuse" id="join">Join</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <title>Join</title>
+  <script src="js/join.js" type="module"></script>
+</head>
 
-      <a href="index.html">
-        <div class="back-button">Back</div>
-      </a>
-    </main>
-  </body>
+<body class="join-body">
+  <main>
+    <h1 class="you-choose-h1">You Choose</h1>
+    <label for="enter-key">Enter Key</label>
+    <input type="text" id="enter-key" pattern="[0-9]+">
+    <!-- <input type="number" id="enter-key"/> -->
+    <button class="button-reuse" id="join">Join</button>
+
+    <a href="index.html">
+      <div class="back-button">Back</div>
+    </a>
+  </main>
+</body>
+
 </html>

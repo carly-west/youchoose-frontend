@@ -49,7 +49,6 @@ export default class ExternalServices {
   // }
 
   async loginRequest(creds) {
-    // try {
     const options = {
       method: "POST",
       headers: {
@@ -65,9 +64,6 @@ export default class ExternalServices {
     const token = response.token;
     console.log(token);
     return token;
-    // } catch (err) {
-    //   alertMessage(err.message.message.statusCode);
-    // }
   }
 
   async registerRequest(creds) {
@@ -84,6 +80,18 @@ export default class ExternalServices {
 
     const message = response.message;
     return message;
+  }
+
+  async validateRoom(roomId) {
+    // try {
+    const response = await fetch(baseURL + `roomExists?roomId=${roomId}`).then(
+      convertToJson
+    );
+    console.log(response);
+    return response;
+    // } catch (err) {
+    //   alertMessage(await err.message.errors[0].msg);
+    // }
   }
 
   // async getOrders(token) {
