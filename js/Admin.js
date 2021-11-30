@@ -3,9 +3,9 @@ import {
   alertMessage,
   qs,
   setSessionStorage,
-  setClick,
   setClickforAll,
   getSessionStorage,
+  setLocalStorage,
 } from "./utils.js";
 
 export default class Admin {
@@ -41,11 +41,12 @@ export default class Admin {
   async register(creds) {
     try {
       const message = await this.services.registerRequest(creds);
-      console.log(this.message);
-      // location.href = "/login.html";
-      return message;
+      console.log(message);
+      setLocalStorage("alertMessage", `${message} You can log in now.`);
+      location.href = "/login.html";
     } catch (err) {
-      console.log(err.message);
+      console.log(err.message.error[0].msg);
+      alertMessage(err.message.error[0].msg);
     }
   }
 
@@ -69,9 +70,7 @@ export default class Admin {
             password: this.password,
             confirmPassword: this.confirmPassword,
           };
-          const message = await this.register(creds);
-          // location.href = "/login.html";
-          alertMessage(message);
+          await this.register(creds);
         } else {
           alertMessage("Please write the same password.");
         }
@@ -80,6 +79,12 @@ export default class Admin {
       default:
         break;
     }
+    // const main = qs("main");
+    // const alert = qs(".alert");
+
+    // if (alert) {
+    //   main.removeChild(alert);
+    // }
   }
 
   showPassword(e) {
@@ -93,7 +98,6 @@ export default class Admin {
         password = document.querySelector("#confirmPassword");
         break;
     }
-    console.log(password);
     if (password.type === "password") {
       password.type = "text";
     } else {
@@ -101,31 +105,3 @@ export default class Admin {
     }
   }
 }
-
-// async showOrders() {
-//     try {
-//         this.orders = await this.services.getOrders(this.token);
-//         console.log(this.orders);
-//         const newOrders = this.orders
-//             .map(
-//                 (order) =>
-//                     `
-//         <ul>
-//             <li>${order.fname}</li>
-//             <li>${order.street}, ${order.city}, ${order.state} ${order.zip}</li>
-
-//         </ul>
-
-//     `
-//             )
-//             .join("");
-//         /*
-//           <li>
-//                  ${console.log(order.items.map((item) => item.name).join(""))}
-//                   </li>*/
-//         this.mainElement.innerHTML = newOrders;
-//     } catch (err) {
-//         // remember this from before?
-//         alertMessage(err.message.message);
-//     }
-// }
