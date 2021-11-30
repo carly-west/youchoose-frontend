@@ -25,9 +25,6 @@ export default class ExternalServices {
       convertToJson
     );
     console.log(response);
-
-    // const token = response.token;
-    // console.log(token);
     return response;
   }
 
@@ -71,20 +68,4 @@ export default class ExternalServices {
     const message = response.message;
     return message;
   }
-  // async getOrders(token) {
-  //     try {
-  //         const options = {
-  //             method: "GET",
-  //             headers: {
-  //                 Authorization: `Bearer ${token.accessToken}`,
-  //             },
-  //         };
-  //         const orders = await fetch(baseURL + "orders/", options).then(
-  //             convertToJson
-  //         );
-  //         return orders;
-  //     } catch (err) {
-  //         alertMessage(err.message.message);
-  //     }
-  // }
 }
