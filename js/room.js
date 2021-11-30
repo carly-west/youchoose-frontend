@@ -125,43 +125,25 @@ function showWaitingScreen() {
 }
 
 setClick("#saveResults", async () => {
-  // const body = {
-  //   top3: restaurantPicks,
-  // };
-  // fetch(serverUrl + "/saveResult", {
-  //   method: "POST",
-  //   mode: "cors",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     Authorization: authToken.toString(),
-  //   },
-  //   body: JSON.stringify(body),
-  // })
-  //   .then((response) => {
-  //     if (response.ok) {
-  //       return response.json();
-  //     } else {
-  //       throw new Error("unable to save results");
-  //     }
-  //   })
-  //   .then((result) => {
-  //     console.log(result);
-  //   });
-
   try {
     const results = {
-      top3: restaurantPicks,
-      UserId: userId,
+      results: restaurantPicks,
+      userId: userId,
     };
     const response = await services.saveRequest(results, authToken);
     console.log(response);
-    if (creator) {
-      location.href = "past-results.html";
-    } else {
-      location.href = "index.html";
-    }
+    socket.emit("redirect", roomId);
   } catch (err) {
     console.log(err);
     alertMessage(err.message.message);
+  }
+});
+
+socket.on("redirect", () => {
+  console.log("redirect triggered");
+  if (creator) {
+    location.href = "past-results.html";
+  } else {
+    location.href = "index.html";
   }
 });
