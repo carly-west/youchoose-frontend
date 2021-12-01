@@ -10,3 +10,4 @@ if (message) {
 }
 
 localStorage.removeItem("alertMessage");
+

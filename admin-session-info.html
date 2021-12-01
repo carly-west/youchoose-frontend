@@ -1,42 +1,53 @@
 <!-- This page is for the admin to choose options before starting a session -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <script src="js/verifyAccess.js" type="module"></script>
-    <title>Session Info</title>
-  </head>
 
-  <body class="admin-session-info-body">
-    <main>
-      <div class="admin-dropdown">
-        <!-- I don't know how to add a dropdown on an image -->
-        <a class="admin-button">
-          <img src="images/user-button.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="js/verifyAccess.js" type="module"></script>
+  <title>Session Info</title>
+</head>
+
+<body class="admin-session-info-body">
+  <main>
+    <div class="admin-dropdown">
+      <!-- <a class="admin-button"> -->
+      <img src="images/user-button.png" />
+      <div class="dropdown-content">
+        <a id="logout-button">
+          <p>Logout</p>
+        </a>
+
+        <a id="dashboard-button" href="admin-dashboard.html">
+          <p>Dashboard</p>
         </a>
       </div>
+    </div>
 
-      <h1 class="you-choose-h1">You Choose</h1>
-      <form>
-        <!-- This will have either the radius or zip code -->
-        <h2>Restaurant Location:</h2>
-        <!-- Commenting this out for now because we only have handling for lat/lon -->
-        <!-- <label for="zip-code">Zip Code</label>
+    <h1 class="you-choose-h1">You Choose</h1>
+    <form>
+      <!-- This will have either the radius or zip code -->
+      <h2>Restaurant Location:</h2>
+      <!-- Commenting this out for now because we only have handling for lat/lon -->
+      <!-- <label for="zip-code">Zip Code</label>
         <input
           type="text"
           id="zip-code"
           name="zip-code"
           placeholder="Zip Code"
         /> -->
-        <label for="radius">How far away can it be?</label>
-        <input type="text" id="radius" name="radius" placeholder="Radius(m)" />
-        <div id="btn-wrapper"><button type="button" class="button-reuse" id="start-session-btn">Start Session</button></div>
-        <p>We will look for restaurants in your current location. Make sure to click 'allow' when a popup requests to use your location.</p>
-      </form>
-    </main>
+      <label for="radius">How far away can it be?</label>
+      <input type="text" id="radius" name="radius" placeholder="Radius(m)" />
+      <div id="btn-wrapper"><button type="button" class="button-reuse" id="start-session-btn">Start Session</button>
+      </div>
+      <p>We will look for restaurants in your current location. Make sure to click 'allow' when a popup requests to use
+        your location.</p>
+    </form>
+  </main>
 
-    <script src="js/startSession.js" type="module"></script>
-  </body>
+  <script src="js/startSession.js" type="module"></script>
+</body>
+
 </html>
