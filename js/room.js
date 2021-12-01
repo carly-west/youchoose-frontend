@@ -1,7 +1,11 @@
 import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
-import { qs, setClick, getSessionStorage } from "./utils.js";
+import { qs, setClick, getSessionStorage, alertMessage } from "./utils.js";
+import ExternalServices from "./externalServices.js";
 
-let authToken = getSessionStorage("userToken");
+const services = new ExternalServices();
+
+const authToken = getSessionStorage("userToken");
+const userId = getSessionStorage("userId");
 
 const serverUrl = "https://you-choose-api.herokuapp.com/";
 
@@ -112,6 +116,7 @@ socket.on("finish", (results) => {
     qs("#saveResults").type = "button";
   }
   restaurantPicks = results;
+  console.log(restaurantPicks);
 });
 
 function showWaitingScreen() {
@@ -119,27 +124,26 @@ function showWaitingScreen() {
   qs("#restaurant-info-wrapper").classList.add("hidden");
 }
 
-setClick("#saveResults", () => {
-  const body = {
-    top3: restaurantPicks,
-  };
-  fetch(serverUrl + "/saveResult", {
-    method: "POST",
-    mode: "cors",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: authToken.toString(),
-    },
-    body: JSON.stringify(body),
-  })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("unable to save results");
-      }
-    })
-    .then((result) => {
-      console.log(result);
-    });
+setClick("#saveResults", async () => {
+  try {
+    const results = {
+      results: restaurantPicks,
+      userId: userId,
+    };
+    const response = await services.saveRequest(results, authToken);
+    console.log(response);
+    socket.emit("redirect", roomId);
+  } catch (err) {
+    console.log(err);
+    alertMessage(err.message.message);
+  }
+});
+
+socket.on("redirect", () => {
+  console.log("redirect triggered");
+  if (creator) {
+    location.href = "past-results.html";
+  } else {
+    location.href = "index.html";
+  }
 });

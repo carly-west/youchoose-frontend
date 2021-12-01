@@ -13,41 +13,6 @@ async function convertToJson(res) {
 export default class ExternalServices {
   constructor() {}
 
-  // getProductsData(category) {
-  //     return fetch(baseURL + `products/search/${category}`)
-  //         .then(convertToJson)
-  //         .then((data) => data.Result);
-  // }
-
-  // async findProductById(productId) {
-  //     const product = await fetch(baseURL + `product/${productId}`)
-  //         .then(convertToJson)
-  //         .then((data) => data.Result);
-  //     return product;
-  // }
-
-  // async checkout(order) {
-  //     try {
-  //         const options = {
-  //             method: "POST",
-  //             headers: {
-  //                 "Content-Type": "application/json",
-  //             },
-  //             body: JSON.stringify(order),
-  //         };
-  //         const results = await fetch(baseURL + "checkout/", options).then(
-  //             convertToJson
-  //         );
-  //         location.href = "../checkout/checkedout.html";
-  //         localStorage.clear();
-  //         qs("#checkout-form form").reset();
-  //         return results;
-  //     } catch (err) {
-  //         // remember this from before?
-  //         alertMessage(err.message.message);
-  //     }
-  // }
-
   async loginRequest(creds) {
     const options = {
       method: "POST",
@@ -60,10 +25,7 @@ export default class ExternalServices {
       convertToJson
     );
     console.log(response);
-
-    const token = response.token;
-    console.log(token);
-    return token;
+    return response;
   }
 
   async registerRequest(creds) {
@@ -83,15 +45,11 @@ export default class ExternalServices {
   }
 
   async validateRoom(roomId) {
-    // try {
     const response = await fetch(baseURL + `roomExists?roomId=${roomId}`).then(
       convertToJson
     );
     console.log(response);
     return response;
-    // } catch (err) {
-    //   alertMessage(await err.message.errors[0].msg);
-    // }
   }
 
   async pastResultsRequest(token) {
@@ -143,4 +101,20 @@ export default class ExternalServices {
   //         alertMessage(err.message.message);
   //     }
   // }
+  async saveRequest(results, token) {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+      body: JSON.stringify(results),
+    };
+    const response = await fetch(baseURL + "saveResult", options).then(
+      convertToJson
+    );
+
+    const message = response.message;
+    return message;
+  }
 }

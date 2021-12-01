@@ -2,8 +2,6 @@
 export function qs(selector, parent = document) {
   return parent.querySelector(selector);
 }
-// or a more concise version if you are into that sort of thing:
-// export const qs = (selector, parent = document) => parent.querySelector(selector);
 
 // retrieve data from sessionstorage
 export function getSessionStorage(key) {
@@ -52,56 +50,6 @@ export function getParams(param) {
   const urlParams = new URLSearchParams(queryString);
   const product = urlParams.get(param);
   return product;
-}
-
-export function renderListWithTemplate(
-  template,
-  parentElement,
-  list,
-  callback
-) {
-  const newTemplate = qs(template);
-  parentElement.innerHTML = "";
-  list.forEach((product) => {
-    const clone = newTemplate.content.cloneNode(true);
-    callback(clone, product);
-    parentElement.appendChild(clone);
-  });
-}
-
-export function renderWithTemplate(template, parentElement, data, callback) {
-  let clone = template.content.cloneNode(true);
-  if (callback) {
-    clone = callback(clone, data);
-  }
-  parentElement.appendChild(clone);
-}
-
-export async function loadTemplate(path) {
-  const html = await fetch(path)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Error!");
-      }
-      return response;
-    })
-    .then((response) => response.text());
-
-  const template = document.createElement("template");
-  template.innerHTML = html;
-  return template;
-}
-
-export async function loadHeaderFooter() {
-  const headerHTML = await loadTemplate("../partials/header.html");
-  const footerHTML = await loadTemplate("../partials/footer.html");
-
-  const header = qs("#main-header");
-  const footer = qs("#main-footer");
-
-  await renderWithTemplate(headerHTML, header);
-  await renderWithTemplate(footerHTML, footer);
-  renderCartSuperscript();
 }
 
 export function alertMessage(message, error = true, scroll = true) {

@@ -11,8 +11,8 @@
   </head>
 
   <body>
-    <div class="admin-code-body">
-      <main>
+    <main>
+      <div class="admin-code-body">
         <div class="admin-dropdown">
           <!-- I don't know how to add a dropdown on an image -->
           <a class="admin-button">
@@ -26,40 +26,44 @@
         <p id="people-joined"><span id="userCount"></span> people joined</p>
 
         <input type="hidden" value="Start" class="button-reuse" id="start" />
-      </main>
-    </div>
+      </div>
 
-    <main class="hidden" id="restaurant-info-wrapper">
-      <h1 class="you-choose-h1">You Choose</h1>
-      <h2 id="restaurant-name">Restaurant</h2>
-      <p id="restaurant-info"></p>
-      <div class="options">
-        <button class="btn-image" id="like">
-          <img src="./images/star.png" alt="Happy Face Icon" />
-        </button>
-        <button class="btn-image" id="dislike">
-          <img src="./images/meh.png" alt="Happy Face Icon" />
-        </button>
+      <section class="hidden" id="restaurant-info-wrapper">
+        <h1 class="you-choose-h1">You Choose</h1>
+        <h2 id="restaurant-name">Restaurant</h2>
+        <p id="restaurant-info"></p>
+        <div class="options">
+          <button class="btn-image" id="like">
+            <img src="./images/star.png" alt="Happy Face Icon" />
+          </button>
+          <button class="btn-image" id="dislike">
+            <img src="./images/meh.png" alt="Happy Face Icon" />
+          </button>
+        </div>
+      </section>
+
+      <div id="waiting-screen" class="hidden">
+        <!-- some code to show we are waiting -->
+        <p>Waiting...</p>
+        <img
+          src="https://media.giphy.com/media/JVGLHEuzbVviw/giphy.gif"
+          alt="funny GIF"
+          width="100%"
+        />
+      </div>
+
+      <div id="results-wrapper" class="hidden">
+        <h1 class="you-choose-h1">You Choose</h1>
+        <h2>Results</h2>
+        <ul id="results"></ul>
+
+        <input
+          type="hidden"
+          value="Save Results"
+          class="button-reuse"
+          id="saveResults"
+        />
       </div>
     </main>
-
-    <div id="waiting-screen" class="hidden">
-      <!-- some code to show we are waiting -->
-      Waiting...
-    </div>
-
-    <div id="results-wrapper" class="hidden">
-      <h1 class="you-choose-h1">You Choose</h1>
-      <h2>Results</h2>
-      <ul id="results"></ul>
-
-      <!-- Placeholder for now -->
-      <input
-        type="hidden"
-        value="Save Results"
-        class="button-reuse"
-        id="saveResults"
-      />
-    </div>
   </body>
 </html>
