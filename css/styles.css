@@ -316,23 +316,63 @@ h2 {
 }
  
 @media only screen and (min-width: 32.5rem) {
- body {
-   max-width: 80%;
-   margin: auto;
-   /* Why isn't this working */
-   background-color: var(--dark-blue);
-   }
- 
- html, main {
-   height: 100vh;
- }
- 
- .you-choose-h1 {
-   padding-top: 10%;
- }
+
+  body {
+    max-width: 80%;
+    margin: auto;
+    /* Why isn't this working */
+    background-color: var(--dark-blue);
+  }
+
+  html, main {
+    height: 100vh;
+  }
+
+  .you-choose-h1 {
+    padding-top: 10%;
+  }
+}
+
+/* Past Results */
+
+#past-results-main {
+  height: auto;
+}
+
+#pastResults {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.25rem;
+}
+
+.result {
+  display: grid;
+  grid-template-columns: auto auto;
+  border: 2px solid black;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.result button {
+  background-color: var(--salmon);
+  justify-self: right;
+  border-radius: 5px;
+  grid-column: 2;
+  height: 80%;
+}
+.result h3 {
+  grid-row: 1;
+}
+.result ol{
+  padding: 0;
+  list-style-position: inside;
+  grid-column: 1/3;
+}
+
 }
  
- 
+
 @media only screen and (min-width: 64rem) {
  
  body {
