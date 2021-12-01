@@ -1,4 +1,4 @@
-import { qs, setClick, alertMessage } from "./utils.js";
+import { qs, setClick, alertMessage, isAdmin } from "./utils.js";
 import ExternalServices from "./externalServices.js";
 
 const services = new ExternalServices();
@@ -31,3 +31,4 @@ async function checkId() {
 }
 
 // Test 100023
+isAdmin();
