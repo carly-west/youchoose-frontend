@@ -3,6 +3,9 @@ export function qs(selector, parent = document) {
   return parent.querySelector(selector);
 }
 
+export function qsa(selector, parent = document) {
+  return parent.querySelectorAll(selector);
+}
 // retrieve data from sessionstorage
 export function getSessionStorage(key) {
   let token = JSON.parse(sessionStorage.getItem(key));

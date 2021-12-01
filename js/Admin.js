@@ -2,9 +2,9 @@ import ExternalServices from "./externalServices.js";
 import {
   alertMessage,
   qs,
+  qsa,
   setSessionStorage,
   setClickforAll,
-  getSessionStorage,
   setLocalStorage,
 } from "./utils.js";
 
@@ -24,6 +24,7 @@ export default class Admin {
       this.handleClick();
     });
     setClickforAll(".fa-eye", (e) => this.showPassword(e));
+    this.showPasswordReq();
   }
 
   async login(creds) {
@@ -80,12 +81,6 @@ export default class Admin {
       default:
         break;
     }
-    // const main = qs("main");
-    // const alert = qs(".alert");
-
-    // if (alert) {
-    //   main.removeChild(alert);
-    // }
   }
 
   showPassword(e) {
@@ -93,10 +88,10 @@ export default class Admin {
     let password = "";
     switch (id) {
       case "password":
-        password = document.querySelector("#password");
+        password = qs("#password");
         break;
       case "confirmPassword":
-        password = document.querySelector("#confirmPassword");
+        password = qs("#confirmPassword");
         break;
     }
     if (password.type === "password") {
@@ -104,5 +99,19 @@ export default class Admin {
     } else {
       password.type = "password";
     }
+  }
+
+  showPasswordReq() {
+    qsa(".button-inside input").forEach((el) => {
+      el.addEventListener("focus", () => {
+        qs("#message").classList.remove("hidden");
+      });
+    });
+
+    qsa(".button-inside input").forEach((el) => {
+      el.addEventListener("blur", () => {
+        qs("#message").classList.add("hidden");
+      });
+    });
   }
 }
