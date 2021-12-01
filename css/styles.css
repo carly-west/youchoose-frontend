@@ -292,6 +292,10 @@ h2 {
 
 /* Past Results */
 
+#past-results-main {
+  height: auto;
+}
+
 #pastResults {
   display: grid;
   grid-template-columns: 1fr;

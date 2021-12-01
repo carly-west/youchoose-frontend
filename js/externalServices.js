@@ -52,9 +52,9 @@ export default class ExternalServices {
     return response;
   }
 
-  async pastResultsRequest(token) {
+  async pastResultsRequest(token, userId) {
     try {
-      var response = await fetch('https://ezmock.herokuapp.com/api/61a6710010cfef00155803e4', {
+      var response = await fetch(baseURL + 'getResults', {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',
@@ -69,17 +69,17 @@ export default class ExternalServices {
      }
   }
 
-  async deletePastResult(token, id) {
-      const response = fetch('https://ezmock.herokuapp.com/api/61a6710010cfef00155803e4', {
-    method: "DELETE",
-    body: {
-        resultId: id,
-    },
-    headers: {
-        'Content-Type': 'application/json',
-        Authorization: token
-    }
-    }).then(convertToJson);
+  async deletePastResult(token, resultId, userId) {
+    const response = await fetch(baseURL + 'deleteResult', {
+      method: "DELETE",
+      body: JSON.stringify({
+          resultId: resultId,
+      }),
+      headers: {
+          'Content-Type': 'application/json',
+          Authorization: token
+      }
+  }).then(convertToJson);
     
     return response.message;
   }
