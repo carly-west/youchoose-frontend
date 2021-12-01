@@ -94,6 +94,39 @@ export default class ExternalServices {
     // }
   }
 
+  async pastResultsRequest(token) {
+    try {
+      var response = await fetch('https://ezmock.herokuapp.com/api/61a6710010cfef00155803e4', {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: token,
+        }
+    }).then(convertToJson);
+      const message = response.message;
+      return response;
+     }
+     catch (err) {
+       alertMessage(err.message.message);
+     }
+  }
+
+  async deletePastResult(token, id) {
+      const response = fetch('https://ezmock.herokuapp.com/api/61a6710010cfef00155803e4', {
+    method: "DELETE",
+    body: {
+        resultId: id,
+    },
+    headers: {
+        'Content-Type': 'application/json',
+        Authorization: token
+    }
+    }).then(convertToJson);
+    
+    return response.message;
+  }
+
+
   // async getOrders(token) {
   //     try {
   //         const options = {
