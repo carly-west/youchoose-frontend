@@ -1,40 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Past Results</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="js/verifyAccess.js" type="module"></script>
+    <script src="js/pastResults.js" type="module"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Past Results</title>
-  <link rel="stylesheet" href="./css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <script src="js/verifyAccess.js" type="module"></script>
-  <script src="js/pastResults.js" type="module"></script>
-</head>
-
-<body>
-  <main id="past-results-main">
-
-    <div class="admin-dropdown">
-      <img src="images/user-button.png" />
-      <div class="dropdown-content">
-        <a id="logout-button" href="index.html">
-          <p>Logout</p>
-        </a>
-
-        <a id="dashboard-button" href="admin-dashboard.html">
-          <p>Dashboard</p>
-        </a>
-      </div>
-    </div>
-
-    <h1 class="you-choose-h1">You Choose</h1>
-    <h2>Past Results</h2>
-    <section id="pastResults">
-
-    </section>
-
-  </main>
-</body>
-
+  <body>
+    <main id="past-results-main">
+      <div class="admin-dropdown">
+        <!-- <a class="admin-button"> -->
+        <img src="images/user-button.png" alt="User logo" />
+        <div class="dropdown-content">
+          <p><a id="logout-button"> Logout </a></p>
+          <p>
+            <a id="dashboard-button" href="admin-dashboard.html"> Dashboard </a>
+          </p>
+        </div>
+      <h1 class="you-choose-h1">You Choose</h1>
+      <h2>Past Results</h2>
+      <section id="pastResults"></section>
+    </main>
+  </body>
 </html>
+
