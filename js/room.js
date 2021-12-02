@@ -1,6 +1,7 @@
 import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
 import { qs, setClick, getSessionStorage, alertMessage } from "./utils.js";
 import ExternalServices from "./externalServices.js";
+import isAdmin from "./verifyAccess.js";
 
 const services = new ExternalServices();
 
@@ -147,3 +148,7 @@ socket.on("redirect", () => {
     location.href = "index.html";
   }
 });
+
+
+
+isAdmin();

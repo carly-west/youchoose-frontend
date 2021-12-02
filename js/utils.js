@@ -91,9 +91,3 @@ export function alertMessage(message, error = true, scroll = true) {
   if (scroll) window.scrollTo(0, 0);
 }
 
-export function isAdmin() {
-  const token = getSessionStorage("userToken");
-  if (!token) {
-    qs(".admin-dropdown").classList.add("hidden");
-  }
-}
