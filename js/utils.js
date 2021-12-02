@@ -94,6 +94,11 @@ export function alertMessage(message, error = true, scroll = true) {
 export function isAdmin() {
   const token = getSessionStorage("userToken");
   if (!token) {
-    qs(".admin-dropdown").classList.add("hidden");
+    qsa(".admin-dropdown").forEach((item) => item.classList.add("hidden"));
+  } else {
+    setClick("#logout-button", function () {
+      sessionStorage.removeItem("userToken");
+      location.href = "/index.html";
+    });
   }
 }
