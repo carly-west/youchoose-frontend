@@ -2,16 +2,16 @@ import ExternalServices from "./externalServices.js";
 import {
   alertMessage,
   qs,
+  qsa,
   setSessionStorage,
   setClickforAll,
-  getSessionStorage,
   setLocalStorage,
 } from "./utils.js";
 
 export default class Admin {
   constructor(identifier) {
     this.identifier = identifier;
-    this.response = null;
+    this.token = null;
     this.services = new ExternalServices();
     this.email = null;
     this.password = null;
@@ -24,14 +24,14 @@ export default class Admin {
       this.handleClick();
     });
     setClickforAll(".fa-eye", (e) => this.showPassword(e));
+    this.showPasswordReq();
   }
 
   async login(creds) {
     try {
-      this.response = await this.services.loginRequest(creds);
-      console.log(this.response);
-      setSessionStorage("userToken", this.response.token);
-      setSessionStorage("userId", this.response.userId);
+      this.token = await this.services.loginRequest(creds);
+      console.log(this.token);
+      setSessionStorage("userToken", this.token);
       location.href = "/admin-dashboard.html";
     } catch (err) {
       console.log(err.message);
@@ -80,12 +80,6 @@ export default class Admin {
       default:
         break;
     }
-    // const main = qs("main");
-    // const alert = qs(".alert");
-
-    // if (alert) {
-    //   main.removeChild(alert);
-    // }
   }
 
   showPassword(e) {
@@ -93,10 +87,10 @@ export default class Admin {
     let password = "";
     switch (id) {
       case "password":
-        password = document.querySelector("#password");
+        password = qs("#password");
         break;
       case "confirmPassword":
-        password = document.querySelector("#confirmPassword");
+        password = qs("#confirmPassword");
         break;
     }
     if (password.type === "password") {
@@ -104,5 +98,19 @@ export default class Admin {
     } else {
       password.type = "password";
     }
+  }
+
+  showPasswordReq() {
+    qsa(".button-inside input").forEach((el) => {
+      el.addEventListener("focus", () => {
+        qs("#message").classList.remove("hidden");
+      });
+    });
+
+    qsa(".button-inside input").forEach((el) => {
+      el.addEventListener("blur", () => {
+        qs("#message").classList.add("hidden");
+      });
+    });
   }
 }
