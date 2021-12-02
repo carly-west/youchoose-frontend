@@ -14,7 +14,6 @@ export default class pastResults {
 
   async getResults() {
     this.results = await this.services.pastResultsRequest(this.token);
-    console.log(this.results);
   }
 
   async renderPastResults() {
@@ -25,9 +24,15 @@ export default class pastResults {
     var resultListHtml = "";
     var resultSethtml = "";
     this.results.results.forEach((result) => {
+        // parse
+        const date = new Date(result.date);
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        const year = date.getFullYear();
+        
       resultSethtml = `<div class="result">
             <button class="btn" data-setid = ${result._id}><i class="fa fa-trash"></i></button>
-            <h3 class="date">Will Add Date Later</h3>
+            <h3 class="date">${month + '/' + day + '/' + year}</h3>
             <ol>`;
       result.resultSet.forEach((resturaunt) => {
         resultSethtml += `<li>${resturaunt}</li>`;
