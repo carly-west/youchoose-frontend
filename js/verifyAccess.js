@@ -1,4 +1,4 @@
-import { getSessionStorage } from "./utils.js";
+import { getSessionStorage, qs } from "./utils.js";
 
 function verifyAccess() {
   const token = getSessionStorage("userToken");
@@ -9,3 +9,15 @@ function verifyAccess() {
 }
 
 verifyAccess();
+
+// console.log(getLocalStorage("userToken"));
+
+
+const logoutButton = document.getElementById("logout-button");
+
+logoutButton.addEventListener("touchend", function () {
+  sessionStorage.removeItem("userToken");
+});
+logoutButton.addEventListener("click", function () {
+  sessionStorage.removeItem("userToken");
+});
