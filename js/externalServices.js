@@ -69,19 +69,23 @@ export default class ExternalServices {
     }
   }
 
-  async deletePastResult(token, resultId) {
-    const response = await fetch(baseURL + "deleteResult", {
-      method: "DELETE",
-      body: JSON.stringify({
-        resultId: resultId,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-    }).then(convertToJson);
-
-    return response.message;
+  async deletePastResult(token, result) {
+    try{
+      const response = await fetch(baseURL + "deleteResult", {
+        method: "DELETE",
+        body: JSON.stringify({
+          resultId: result,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        }
+      }).then(convertToJson);
+      return response.message;
+    }
+    catch (err) {
+      alertMessage(err.message.message);
+    }
   }
 
   async saveRequest(results, token) {
