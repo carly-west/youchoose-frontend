@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <title>Session Code</title>
-  </head>
 
-  <body class="admin-code-body">
-    <main>
-      <div class="admin-dropdown">
-        <!-- I don't know how to add a dropdown on an image -->
-        <a class="admin-button">
-          <img src="images/user-button.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <title>Session Code</title>
+</head>
+
+<body class="admin-code-body">
+  <main>
+    <div class="admin-dropdown">
+      <img src="images/user-button.png" />
+      <div class="dropdown-content">
+        <a id="logout-button" href="index.html">
+          <p>Logout</p>
+        </a>
+
+        <a id="dashboard-button" href="admin-dashboard.html">
+          <p>Dashboard</p>
         </a>
       </div>
-      <h1 class="you-choose-h1">You Choose</h1>
+    </div>
+    <h1 class="you-choose-h1">You Choose</h1>
 
-      <p id="admin-code">01756</p>
+    <p id="admin-code">01756</p>
 
-      <p id="people-joined">3 people joined</p>
+    <p id="people-joined">3 people joined</p>
 
-      <input type="submit" value="Start" class="button-reuse" />
-    </main>
-  </body>
+    <input type="submit" value="Start" class="button-reuse" />
+  </main>
+</body>
+
 </html>
