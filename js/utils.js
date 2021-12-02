@@ -91,3 +91,14 @@ export function alertMessage(message, error = true, scroll = true) {
   if (scroll) window.scrollTo(0, 0);
 }
 
+export function isAdmin() {
+  const token = getSessionStorage("userToken");
+  if (!token) {
+    qsa(".admin-dropdown").forEach((item) => item.classList.add("hidden"));
+  } else {
+    setClick("#logout-button", function () {
+      sessionStorage.removeItem("userToken");
+      location.href = "/index.html";
+    });
+  }
+}

@@ -1,4 +1,4 @@
-import { getSessionStorage, qs, setClick } from "./utils.js";
+import { getSessionStorage, qs, isAdmin } from "./utils.js";
 
 function verifyAccess() {
   const token = getSessionStorage("userToken");
@@ -11,16 +11,3 @@ function verifyAccess() {
 }
 
 verifyAccess();
-
-
-export function isAdmin() {
-  const token = getSessionStorage("userToken");
-  if (!token) {
-    qs(".admin-dropdown").classList.add("hidden");
-  } else {
-    setClick("#logout-button", function () {
-      sessionStorage.removeItem("userToken");
-    });
-
-  }
-}

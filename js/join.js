@@ -1,7 +1,5 @@
-import { qs, setClick, alertMessage } from "./utils.js";
+import { qs, setClick, alertMessage, isAdmin } from "./utils.js";
 import ExternalServices from "./externalServices.js";
-
-import { isAdmin } from "./verifyAccess.js";
 
 const services = new ExternalServices();
 
