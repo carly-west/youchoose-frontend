@@ -90,3 +90,10 @@ export function alertMessage(message, error = true, scroll = true) {
   // to show the alert at the top of the window
   if (scroll) window.scrollTo(0, 0);
 }
+
+export function isAdmin() {
+  const token = getSessionStorage("userToken");
+  if (!token) {
+    qs(".admin-dropdown").classList.add("hidden");
+  }
+}
