@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="js/verifyAccess.js" type="module"></script>
+    <title>Dashboard</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/styles.css" />
-  <script src="js/verifyAccess.js" type="module"></script>
-  <title>Dashboard</title>
-</head>
+  <body class="admin-dashboard-body">
+    <main>
+      <div class="admin-dropdown">
+        <!-- <a class="admin-button"> -->
+        <img src="images/user-button.png" alt="User logo" />
+        <div class="dropdown-content">
+          <a id="logout-button">
+            <p>Logout</p>
+          </a>
 
-<body class="admin-dashboard-body">
-  <main>
+          <a id="dashboard-button" href="admin-dashboard.html">
+            <p>Dashboard</p>
+          </a>
+        </div>
+      </div>
 
-    <div class="admin-dropdown">
-      <!-- <a class="admin-button"> -->
-      <img src="images/user-button.png" />
-      <div class="dropdown-content">
-        <a id="logout-button">
-          <p>Logout</p>
+      <h1 class="you-choose-h1">You Choose</h1>
+
+      <div class="dashboard-buttons">
+        <a href="admin-session-info.html">
+          <div class="start-session-button common-button">Start Session</div>
         </a>
-
-        <a id="dashboard-button" href="admin-dashboard.html">
-          <p>Dashboard</p>
+        <a href="join.html">
+          <div class="join-session common-button">Join Session</div>
+        </a>
+        <a href="past-results.html">
+          <div class="past-results common-button">Past Results</div>
         </a>
       </div>
-    </div>
-
-    <h1 class="you-choose-h1">You Choose</h1>
-
-    <div class="dashboard-buttons">
-      <a href="admin-session-info.html">
-        <div class="start-session-button common-button">Start Session</div>
-      </a>
-      <a href="join.html">
-        <div class="join-session common-button">Join Session</div>
-      </a>
-      <a href="past-results.html">
-        <div class="past-results common-button">Past Results</div>
-      </a>
-    </div>
-  </main>
-</body>
-
+    </main>
+  </body>
 </html>

@@ -25,7 +25,8 @@ export default class ExternalServices {
       convertToJson
     );
     console.log(response);
-    return response;
+    const token = response.token;
+    return token;
   }
 
   async registerRequest(creds) {
@@ -52,55 +53,37 @@ export default class ExternalServices {
     return response;
   }
 
-  async pastResultsRequest(token, userId) {
+  async pastResultsRequest(token) {
     try {
-      var response = await fetch(baseURL + 'getResults', {
+      var response = await fetch(baseURL + "getResults", {
         method: "GET",
         headers: {
-            'Content-Type': 'application/json',
-            Authorization: token,
-        }
-    }).then(convertToJson);
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      }).then(convertToJson);
       const message = response.message;
       return response;
-     }
-     catch (err) {
-       alertMessage(err.message.message);
-     }
+    } catch (err) {
+      alertMessage(err.message.message);
+    }
   }
 
-  async deletePastResult(token, resultId, userId) {
-    const response = await fetch(baseURL + 'deleteResult', {
+  async deletePastResult(token, resultId) {
+    const response = await fetch(baseURL + "deleteResult", {
       method: "DELETE",
       body: JSON.stringify({
-          resultId: resultId,
+        resultId: resultId,
       }),
       headers: {
-          'Content-Type': 'application/json',
-          Authorization: token
-      }
-  }).then(convertToJson);
-    
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+    }).then(convertToJson);
+
     return response.message;
   }
 
-
-  // async getOrders(token) {
-  //     try {
-  //         const options = {
-  //             method: "GET",
-  //             headers: {
-  //                 Authorization: `Bearer ${token.accessToken}`,
-  //             },
-  //         };
-  //         const orders = await fetch(baseURL + "orders/", options).then(
-  //             convertToJson
-  //         );
-  //         return orders;
-  //     } catch (err) {
-  //         alertMessage(err.message.message);
-  //     }
-  // }
   async saveRequest(results, token) {
     const options = {
       method: "POST",

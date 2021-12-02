@@ -1,38 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="js/login.js" type="module"></script>
+    <title>Login</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <script src="js/login.js" type="module"></script>
-  <title>Login</title>
-</head>
+  <body class="login-body">
+    <main>
+      <h1 class="you-choose-h1">You Choose</h1>
+      <h2>Login</h2>
+      <form id="login">
+        <label for="email">Email</label>
+        <input
+          name="email"
+          type="email"
+          id="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          required
+        />
+        <label for="password">Password</label>
+        <div class="button-inside">
+          <input
+            name="password"
+            type="password"
+            id="password"
+            pattern="[A-Za-z0-9].{5,}"
+            title="At least 5 characters."
+            required
+          />
+          <button type="button" class="btn show-pass">
+            <i class="fa fa-eye" id="password"></i>
+          </button>
+        </div>
 
-<body class="login-body">
-  <main>
-    <h1 class="you-choose-h1">You Choose</h1>
-    <h2>Login</h2>
-    <form id="login">
-      <label for="email">Email</label>
-      <input name="email" type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
-      <label for="password">Password</label>
-      <div class="button-inside">
-        <input name="password" type="password" id="password" pattern="[A-Za-z0-9].{5,}" title="At least 5 characters."
-          required />
-        <button type="button" class="btn show-pass">
-          <i class="fa fa-eye" id="password"></i>
-        </button>
+        <input type="submit" value="Login" class="button-reuse" />
+      </form>
+
+      <div id="message" class="hidden">
+        <h3>
+          Password must have at least five characters. (Only numbers or letters
+          are accepted.)
+        </h3>
       </div>
 
-      <input type="submit" value="Login" class="button-reuse" />
-    </form>
-
-    <a href="index.html">
-      <div class="back-button">Back</div>
-    </a>
-  </main>
-</body>
-
+      <a href="index.html">
+        <div class="back-button">Back</div>
+      </a>
+    </main>
+  </body>
 </html>
