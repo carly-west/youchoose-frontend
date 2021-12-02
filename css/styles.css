@@ -197,9 +197,7 @@ a:visited {
 }
 
 /* Register and login*/
-input[type="email"],
-input[type="password"],
-input[type="text"] {
+input {
   width: 100%;
   padding: 12px 20px;
   display: block;
@@ -242,16 +240,9 @@ h2 {
 }
 
 /* Join */
-.join-body input[type="number"] {
-  display: block;
-  width: 100%;
-  padding: 12px 20px;
-  display: block;
-  font-size: 40px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin: 10px auto 30px auto;
+.join-body input#enter-key {
+  font-size: 30px;
+  text-align: center;
 }
 
 .join-body label {
