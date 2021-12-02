@@ -17,9 +17,7 @@ const logoutButton = document.getElementById("logout-button");
 
 logoutButton.addEventListener("touchend", function () {
   sessionStorage.removeItem("userToken");
-  sessionStorage.removeItem("userId");
 });
 logoutButton.addEventListener("click", function () {
   sessionStorage.removeItem("userToken");
-  sessionStorage.removeItem("userId");
 });
