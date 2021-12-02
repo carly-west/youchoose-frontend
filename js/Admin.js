@@ -11,7 +11,7 @@ import {
 export default class Admin {
   constructor(identifier) {
     this.identifier = identifier;
-    this.response = null;
+    this.token = null;
     this.services = new ExternalServices();
     this.email = null;
     this.password = null;
@@ -29,10 +29,9 @@ export default class Admin {
 
   async login(creds) {
     try {
-      this.response = await this.services.loginRequest(creds);
-      console.log(this.response);
-      setSessionStorage("userToken", this.response.token);
-      setSessionStorage("userId", this.response.userId);
+      this.token = await this.services.loginRequest(creds);
+      console.log(this.token);
+      setSessionStorage("userToken", this.token);
       location.href = "/admin-dashboard.html";
     } catch (err) {
       console.log(err.message);
