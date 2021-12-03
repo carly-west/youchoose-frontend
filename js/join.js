@@ -20,7 +20,7 @@ async function checkId() {
     try {
       const response = await services.validateRoom(roomId);
       console.log(response);
-      location.href = "/choice.html" + "?room=" + roomId;
+      location.href = "./choice.html" + "?room=" + roomId;
     } catch (err) {
       console.log(err);
       alertMessage("That room number doesn't exist. Please try again.");

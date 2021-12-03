@@ -32,7 +32,7 @@ export default class Admin {
       this.token = await this.services.loginRequest(creds);
       console.log(this.token);
       setSessionStorage("userToken", this.token);
-      location.href = "/admin-dashboard.html";
+      location.href = "./admin-dashboard.html";
     } catch (err) {
       console.log(err.message);
       alertMessage(err.message.error);
@@ -44,7 +44,7 @@ export default class Admin {
       const message = await this.services.registerRequest(creds);
       console.log(message);
       setLocalStorage("alertMessage", `${message} You can log in now.`);
-      location.href = "/login.html";
+      location.href = "./login.html";
     } catch (err) {
       console.log(err.message.error[0].msg);
       alertMessage(err.message.error[0].msg);

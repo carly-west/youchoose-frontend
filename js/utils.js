@@ -95,12 +95,12 @@ export function isAdmin() {
   const token = getSessionStorage("userToken");
   if (!token) {
     qsa(".admin-dropdown").forEach((item) => item.classList.add("hidden"));
-    qs(".back-button").href = "/index.html";
+    qs(".back-button").href = "./index.html";
   } else {
     setClick("#logout-button", function () {
       sessionStorage.removeItem("userToken");
-      location.href = "/index.html";
+      location.href = "./index.html";
     });
-    qs(".back-button").href = "/admin-dashboard.html";
+    qs(".back-button").href = "./admin-dashboard.html";
   }
 }

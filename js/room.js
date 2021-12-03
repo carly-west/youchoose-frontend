@@ -148,9 +148,9 @@ setClick("#saveResults", async () => {
 socket.on("redirect", () => {
   console.log("redirect triggered");
   if (creator) {
-    location.href = "/past-results.html";
+    location.href = "./past-results.html";
   } else {
-    location.href = "/index.html";
+    location.href = "./index.html";
   }
 });
 
