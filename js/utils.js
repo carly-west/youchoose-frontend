@@ -93,14 +93,19 @@ export function alertMessage(message, error = true, scroll = true) {
 
 export function isAdmin() {
   const token = getSessionStorage("userToken");
+  const backButton = qs(".back-button");
   if (!token) {
     qsa(".admin-dropdown").forEach((item) => item.classList.add("hidden"));
-    qs(".back-button").href = "./index.html";
+    if (backButton) {
+      backButton.href = "./index.html";
+    }
   } else {
     setClick("#logout-button", function () {
       sessionStorage.removeItem("userToken");
       location.href = "./index.html";
     });
-    qs(".back-button").href = "./admin-dashboard.html";
+    if (backButton) {
+      backButton.href = "./admin-dashboard.html";
+    }
   }
 }
