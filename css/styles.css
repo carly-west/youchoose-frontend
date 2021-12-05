@@ -85,11 +85,13 @@ main {
 .admin-dropdown img {
   max-width: 80px;
   float: right;
+  width: 20%;
+  margin-right: 2%;
 }
 
 .admin-dropdown {
   position: relative;
-  float: right;
+  /* float: right; */
 }
 
 .dropdown-content {
@@ -261,7 +263,7 @@ h2 {
 
 /* Admin Session */
 #admin-code {
-  font-size: 100px;
+  font-size: 75px;
   max-width: 100%;
   text-align: center;
   margin: 5% 0px 10% 0px;
@@ -367,6 +369,11 @@ h2 {
 
   .common-button {
     margin: 5% auto;
+  }
+
+  /* Admin Session */
+  #admin-code {
+    font-size: 100px;
   }
 }
 
