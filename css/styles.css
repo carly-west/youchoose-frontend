@@ -284,6 +284,34 @@ h2 {
   font-size: 30px;
 }
 
+/* Results */
+
+ol#results {
+  list-style: none;
+  font-size: 20px;
+  counter-reset: my-awesome-counter;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 0;
+  width: 80%;
+  margin: 30px auto 50px;
+}
+
+ol#results li {
+  counter-increment: my-awesome-counter;
+  padding: 0 0 0 0.5em;
+  /*   line-height: 2.5rem; */
+}
+
+ol li::marker {
+  content: counter(my-awesome-counter) ".";
+  color: var(--dark-blue);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Alert Message */
 .alert {
   background-color: #f0a968;
   border: 2px solid #f59735;
@@ -363,10 +391,6 @@ h2 {
     height: 100vh;
   }
 
-  .you-choose-h1 {
-    /* padding-top: 10%; */
-  }
-
   .common-button {
     margin: 5% auto;
   }
@@ -374,6 +398,15 @@ h2 {
   /* Admin Session */
   #admin-code {
     font-size: 100px;
+  }
+
+  /* Results */
+  ol#results {
+    width: 60%;
+  }
+
+  ol li::marker {
+    font-size: 1.8rem;
   }
 }
 
