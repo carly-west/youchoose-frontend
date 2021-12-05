@@ -1,56 +1,59 @@
 <!-- This page is for the admin to choose options before starting a session -->
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="js/verifyAccess.js" type="module"></script>
+    <script src="js/startSession.js" type="module"></script>
+    <title>Session Info</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/styles.css" />
-  <script src="js/verifyAccess.js" type="module"></script>
-  <script src="js/startSession.js" type="module"></script>
-  <title>Session Info</title>
-</head>
-
-<body class="admin-session-info-body">
-  <main>
-    <div class="admin-dropdown">
-      <!-- <a class="admin-button"> -->
-      <img src="images/user-button.png" alt="User logo" />
-      <div class="dropdown-content">
-        <p><a id="logout-button"> Logout </a></p>
-        <p>
-          <a id="dashboard-button" href="./admin-dashboard.html"> Dashboard </a>
-        </p>
+  <body class="admin-session-info-body">
+    <main>
+      <div class="admin-dropdown">
+        <!-- <a class="admin-button"> -->
+        <img src="images/user-button.png" alt="User logo" />
+        <div class="dropdown-content">
+          <p><a id="logout-button"> Logout </a></p>
+          <p>
+            <a id="dashboard-button" href="./admin-dashboard.html">
+              Dashboard
+            </a>
+          </p>
+        </div>
       </div>
-    </div>
 
-    <h1 class="you-choose-h1">You Choose</h1>
-    <form id="start-session">
-      <!-- This will have either the radius or zip code -->
-      <h2>Restaurant Location:</h2>
-      <!-- Commenting this out for now because we only have handling for lat/lon -->
-      <!-- <label for="zip-code">Zip Code</label>
+      <h1 class="you-choose-h1">You Choose</h1>
+      <form id="start-session">
+        <!-- This will have either the radius or zip code -->
+        <h2>Restaurant Location:</h2>
+        <!-- Commenting this out for now because we only have handling for lat/lon -->
+        <!-- <label for="zip-code">Zip Code</label>
         <input
           type="text"
           id="zip-code"
           name="zip-code"
           placeholder="Zip Code"
         /> -->
-      <label for="radius">How far away can it be?</label>
-      <input type="number" id="radius" name="radius" placeholder="Radius (mi)" min="0" />
-      <div id="btn-wrapper">
-        <button type="submit" class="button-reuse">Start Session</button>
-      </div>
-      <p>
-        We will look for restaurants in your current location. Make sure to
-        click 'allow' when a popup requests to use your location.
-      </p>
-    </form>
-    <a href="./admin-dashboard.html" class="back-button">
-      Back
-    </a>
-  </main>
-
-</body>
-
+        <label for="radius">How far away can it be?</label>
+        <input
+          type="number"
+          id="radius"
+          name="radius"
+          placeholder="Radius (mi)"
+          min="1"
+        />
+        <div id="btn-wrapper">
+          <button type="submit" class="button-reuse">Start Session</button>
+        </div>
+        <p>
+          We will look for restaurants in your current location. Make sure to
+          click 'allow' when a popup requests to use your location.
+        </p>
+      </form>
+      <a href="./admin-dashboard.html" class="back-button"> Back </a>
+    </main>
+  </body>
 </html>

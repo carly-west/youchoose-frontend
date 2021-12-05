@@ -1,4 +1,4 @@
-import { getSessionStorage, qs } from "./utils.js";
+import { alertMessage, getSessionStorage, qs } from "./utils.js";
 
 const serverUrl = "https://you-choose-api.herokuapp.com";
 let authToken = getSessionStorage("userToken");
@@ -7,6 +7,7 @@ qs("#start-session").addEventListener("submit", (e) => {
   e.preventDefault();
   qs("#btn-wrapper").innerHTML = "Please Wait ...";
   //get user location
+  let errorMsg = "";
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -46,7 +47,7 @@ qs("#start-session").addEventListener("submit", (e) => {
 
             //redirect to choice page
             window.location =
-              "choice.html" + "?room=" + roomId + "&creator=true";
+              "./choice.html" + "?room=" + roomId + "&creator=true";
           })
           .catch((err) => {
             console.log(err);
@@ -55,7 +56,8 @@ qs("#start-session").addEventListener("submit", (e) => {
       (err) => {
         switch (err.code) {
           case err.PERMISSION_DENIED:
-            errorMsg = "User denied the request to use location.";
+            errorMsg =
+              "Sorry, we weren't able to access your location. Did you remember to click on 'allow'?";
             break;
           case err.POSITION_UNAVAILABLE:
             errorMsg =
@@ -66,9 +68,11 @@ qs("#start-session").addEventListener("submit", (e) => {
             break;
         }
         console.log(errorMsg);
+        alertMessage(errorMsg);
       }
     );
   } else {
     errorMsg = "Geolocation is not supported by this browser";
+    alertMessage(errorMsg);
   }
 });
