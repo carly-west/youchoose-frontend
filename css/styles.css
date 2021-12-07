@@ -109,13 +109,14 @@ main {
   border-radius: 4px;
 }
 
-.dropdown-content p:hover {
+.dropdown-content a:hover {
   background-color: #f1f1f1;
 }
 
-.dropdown-content p {
-  margin: 0;
+.dropdown-content a {
+  display: block;
   padding: 20px;
+  cursor: pointer;
 }
 
 .admin-dropdown:hover .dropdown-content {
