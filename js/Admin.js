@@ -88,10 +88,10 @@ export default class Admin {
     const id = e.id;
     let password = "";
     switch (id) {
-      case "password":
+      case "pswrd":
         password = qs("#password");
         break;
-      case "confirmPassword":
+      case "confirmPswrd":
         password = qs("#confirmPassword");
         break;
     }

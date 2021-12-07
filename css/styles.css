@@ -29,7 +29,6 @@ input {
   width: 100%;
   font-size: 40px;
   font-family: "Chivo", sans-serif;
-  color: var(--dark-blue);
   margin: 5% auto;
 }
 
@@ -269,7 +268,7 @@ h2 {
 
 /* Admin Session */
 #admin-code {
-  font-size: 75px;
+  font-size: 65px;
   max-width: 100%;
   text-align: center;
   margin: 5% 0px 10% 0px;
@@ -277,17 +276,17 @@ h2 {
 
 #people-joined {
   font-size: 30px;
-  margin-bottom: 20%;
+  margin-bottom: 50px;
   text-align: center;
 }
 
 .admin-code-body .button-reuse {
   padding-top: 20px;
   padding-bottom: 20px;
-  max-width: 90%;
+  max-width: 85%;
   margin-left: auto;
   margin-right: auto;
-  font-size: 30px;
+  font-size: 28px;
 }
 
 /* Results */
@@ -404,7 +403,7 @@ ol#results li::marker {
 
   /* Admin Session */
   #admin-code {
-    font-size: 100px;
+    font-size: 85px;
   }
 
   /* Results */
@@ -428,6 +427,11 @@ ol#results li::marker {
     /* max-width: 40%; */
     margin-left: auto;
     margin-right: auto;
+  }
+
+  /* Admin Session */
+  #admin-code {
+    font-size: 100px;
   }
 
   /* Results */
