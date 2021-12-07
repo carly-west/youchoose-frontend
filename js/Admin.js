@@ -22,6 +22,7 @@ export default class Admin {
     qs(this.identifier).addEventListener("submit", (e) => {
       e.preventDefault();
       this.handleClick();
+      qs("#message").classList.add("hidden");
     });
     setClickforAll(".fa-eye", (e) => this.showPassword(e));
     this.showPasswordReq();
@@ -106,12 +107,6 @@ export default class Admin {
     qsa(".button-inside input").forEach((el) => {
       el.addEventListener("focus", () => {
         qs("#message").classList.remove("hidden");
-      });
-    });
-
-    qsa(".button-inside input").forEach((el) => {
-      el.addEventListener("blur", () => {
-        qs("#message").classList.add("hidden");
       });
     });
   }
