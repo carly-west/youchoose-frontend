@@ -2,7 +2,7 @@
 
 :root {
   --black: #293241;
-  --salmon: #f1856a;
+  --salmon: #f08b72;
   --ice-blue: #e0fbfc;
   --light-blue: #98c1d9;
   --light-blue-hover: #b1d0e2;
@@ -31,6 +31,10 @@ input {
   font-family: "Chivo", sans-serif;
   color: var(--dark-blue);
   margin: 5% auto;
+}
+
+.you-choose-h1 a {
+  color: var(--dark-blue);
 }
 
 body {
@@ -295,7 +299,7 @@ ol#results {
   row-gap: 15px;
   padding: 0;
   width: 80%;
-  margin: 30px auto 50px;
+  margin: 30px 15% 50px;
 }
 
 ol#results li {
@@ -304,7 +308,7 @@ ol#results li {
   /*   line-height: 2.5rem; */
 }
 
-ol li::marker {
+ol#results li::marker {
   content: counter(my-awesome-counter) ".";
   color: var(--dark-blue);
   font-weight: bold;
@@ -313,8 +317,8 @@ ol li::marker {
 
 /* Alert Message */
 .alert {
-  background-color: #f0a968;
-  border: 2px solid #f59735;
+  background-color: var(--salmon);
+  border: 2px solid var(--salmon);
   display: flex;
   justify-content: space-between;
   margin: 0.25em 0.5em;
@@ -348,7 +352,8 @@ ol li::marker {
 #pastResults {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 0.25rem;
+  grid-gap: 0.35rem;
+  margin-bottom: 20px;
 }
 
 .result {
@@ -402,10 +407,11 @@ ol li::marker {
 
   /* Results */
   ol#results {
-    width: 60%;
+    width: 50%;
+    margin-left: 33%;
   }
 
-  ol li::marker {
+  ol#results li::marker {
     font-size: 1.8rem;
   }
 }
@@ -420,5 +426,11 @@ ol li::marker {
     max-width: 40%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  /* Results */
+  ol#results {
+    width: 60%;
+    margin-left: 28%;
   }
 }

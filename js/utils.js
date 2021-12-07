@@ -94,10 +94,15 @@ export function alertMessage(message, error = true, scroll = true) {
 export function isAdmin() {
   const token = getSessionStorage("userToken");
   const backButton = qs(".back-button");
+  const title = qsa(".you-choose-h1 a");
+
   if (!token) {
     qsa(".admin-dropdown").forEach((item) => item.classList.add("hidden"));
     if (backButton) {
       backButton.href = "./index.html";
+    }
+    if (title) {
+      title.forEach((item) => (item.href = "./index.html"));
     }
   } else {
     setClick("#logout-button", function () {
@@ -106,6 +111,9 @@ export function isAdmin() {
     });
     if (backButton) {
       backButton.href = "./admin-dashboard.html";
+    }
+    if (title) {
+      title.forEach((item) => (item.href = "./admin-dashboard.html"));
     }
   }
 }
