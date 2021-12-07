@@ -5,7 +5,7 @@ let authToken = getSessionStorage("userToken");
 //listen for button click
 qs("#start-session").addEventListener("submit", (e) => {
   e.preventDefault();
-  qs("#btn-wrapper").innerHTML = "Please Wait ...";
+
   //get user location
   let errorMsg = "";
   if (navigator.geolocation) {
@@ -20,44 +20,56 @@ qs("#start-session").addEventListener("submit", (e) => {
           lat: lat,
           lon: lon,
         };
+
+        let valid = false;
+
         // since radius is optional, check if radius exists before sending this request.
-        if (radius) {
+        if (radius > 0 && Number.isInteger(parseFloat(radius))) {
+          console.log(radius);
           body.radius = radius;
+          valid = true;
+        } else {
+          alertMessage(
+            "Please type a whole number or leave it empty for a default value of 5 &#128512;."
+          );
         }
 
-        fetch(serverUrl + "/createSession", {
-          method: "POST",
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: authToken.toString(),
-          },
-          body: JSON.stringify(body),
-        })
-          .then((result) => {
-            if (result.ok) {
-              return result.json();
-            } else {
-              throw new Error("unable to fetch new room");
-            }
+        if (valid) {
+          qs("#btn-wrapper").innerHTML = "Please Wait ...";
+          fetch(serverUrl + "/createSession", {
+            method: "POST",
+            mode: "cors",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: authToken.toString(),
+            },
+            body: JSON.stringify(body),
           })
-          .then((roomInfo) => {
-            //collect roomId
-            let roomId = roomInfo.roomId;
+            .then((result) => {
+              if (result.ok) {
+                return result.json();
+              } else {
+                throw new Error("unable to fetch new room");
+              }
+            })
+            .then((roomInfo) => {
+              //collect roomId
+              let roomId = roomInfo.roomId;
 
-            //redirect to choice page
-            window.location =
-              "./choice.html" + "?room=" + roomId + "&creator=true";
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+              //redirect to choice page
+              window.location =
+                "./choice.html" + "?room=" + roomId + "&creator=true";
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
       },
       (err) => {
         switch (err.code) {
           case err.PERMISSION_DENIED:
             errorMsg =
-              "Sorry, we weren't able to access your location. Did you remember to click on 'allow'?";
+              "Sorry, we weren't able to access your location. Did you remember to click on ALLOW permission?";
             break;
           case err.POSITION_UNAVAILABLE:
             errorMsg =
