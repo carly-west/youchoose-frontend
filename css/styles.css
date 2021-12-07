@@ -131,6 +131,8 @@ main {
   font-size: 15px;
   cursor: pointer;
   margin-bottom: 1.8rem;
+  background-color: var(--salmon);
+  border-color: var(--salmon);
 }
 
 section.top ul {
@@ -321,7 +323,7 @@ ol#results li::marker {
   border: 2px solid var(--salmon);
   display: flex;
   justify-content: space-between;
-  margin: 0.25em 0.5em;
+  margin: 0.25em 0.5em 1em;
   padding: 0 0.5em;
   color: #303030;
 }
@@ -423,7 +425,7 @@ ol#results li::marker {
   }
 
   .button-reuse {
-    max-width: 40%;
+    /* max-width: 40%; */
     margin-left: auto;
     margin-right: auto;
   }
