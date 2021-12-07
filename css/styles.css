@@ -22,14 +22,11 @@ input {
   display: none;
 }
 
-/* You choose header */
-.you-choose-h1 {
-  text-align: center;
-  display: inline-block;
-  width: 100%;
-  font-size: 40px;
-  font-family: "Chivo", sans-serif;
-  margin: 5% auto;
+/* You choose logo */
+.logo {
+  max-width: 60%;
+  display: block;
+  margin: 0 auto 30px auto;
 }
 
 .you-choose-h1 a {

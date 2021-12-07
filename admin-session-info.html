@@ -1,32 +1,33 @@
 <!-- This page is for the admin to choose options before starting a session -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <script src="js/verifyAccess.js" type="module"></script>
-    <script src="js/startSession.js" type="module"></script>
-    <title>Session Info</title>
-  </head>
 
-  <body class="admin-session-info-body">
-    <main>
-      <div class="admin-dropdown">
-        <!-- <a class="admin-button"> -->
-        <img src="images/user-button.png" alt="User logo" />
-        <div class="dropdown-content">
-          <a id="logout-button"> Logout </a>
-          <a id="dashboard-button" href="./admin-dashboard.html"> Dashboard </a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="js/verifyAccess.js" type="module"></script>
+  <script src="js/startSession.js" type="module"></script>
+  <title>Session Info</title>
+</head>
+
+<body class="admin-session-info-body">
+  <main>
+    <div class="admin-dropdown">
+      <!-- <a class="admin-button"> -->
+      <img src="images/user-button.png" alt="User logo" />
+      <div class="dropdown-content">
+        <a class="dashboard-button" href="./admin-dashboard.html"> Dashboard </a>
+        <a class="logout-button"> Logout </a>
       </div>
+    </div>
 
-      <h1 class="you-choose-h1"><a>You Choose</a></h1>
-      <form id="start-session">
-        <!-- This will have either the radius or zip code -->
-        <h2>Restaurant Location:</h2>
-        <!-- Commenting this out for now because we only have handling for lat/lon -->
-        <!-- <label for="zip-code">Zip Code</label>
+    <h1 class="you-choose-h1"><a>You Choose</a></h1>
+    <form id="start-session">
+      <!-- This will have either the radius or zip code -->
+      <h2>Restaurant Location:</h2>
+      <!-- Commenting this out for now because we only have handling for lat/lon -->
+      <!-- <label for="zip-code">Zip Code</label>
         <input
           type="text"
           id="zip-code"
@@ -54,3 +55,4 @@
     </main>
   </body>
 </html>
+

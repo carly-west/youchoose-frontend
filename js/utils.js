@@ -105,7 +105,7 @@ export function isAdmin() {
       title.forEach((item) => (item.href = "./index.html"));
     }
   } else {
-    setClick("#logout-button", function () {
+    setClick(".logout-button", function () {
       sessionStorage.removeItem("userToken");
       location.href = "./index.html";
     });
