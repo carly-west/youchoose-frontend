@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Past Results</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="js/verifyAccess.js" type="module"></script>
+    <script src="js/pastResults.js" type="module"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Past Results</title>
-  <link rel="stylesheet" href="./css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <script src="js/verifyAccess.js" type="module"></script>
-  <script src="js/pastResults.js" type="module"></script>
-</head>
-
-<body>
-  <main id="past-results-main">
-    <div class="admin-dropdown">
-      <!-- <a class="admin-button"> -->
-      <img src="images/user-button.png" alt="User logo" />
-      <div class="dropdown-content">
-        <a class="dashboard-button" href="./admin-dashboard.html"> Dashboard </a>
-        <a class="logout-button"> Logout </a>
+  <body>
+    <main id="past-results-main">
+      <div class="admin-dropdown">
+        <!-- <a class="admin-button"> -->
+        <img src="images/user-button.png" alt="User logo" />
+        <div class="dropdown-content">
+          <a class="dashboard-button" href="./admin-dashboard.html">
+            Dashboard
+          </a>
+          <a class="logout-button"> Logout </a>
+        </div>
       </div>
-    </div>
-    <a href="./index.html"><img class="logo" src="images/logo.png"></a>
+      <a href="./index.html"
+        ><img class="logo" src="images/logo.png" alt="Website logo"
+      /></a>
 
-    <h2>Past Results</h2>
-    <section id="pastResults"></section>
+      <h2>Past Results</h2>
+      <section id="pastResults"></section>
 
-    <a href="./admin-dashboard.html" class="back-button"> Back </a>
-  </main>
-</body>
-
+      <a href="./admin-dashboard.html" class="back-button"> Back </a>
+    </main>
+  </body>
 </html>

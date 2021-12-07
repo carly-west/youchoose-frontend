@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="js/verifyAccess.js" type="module"></script>
+    <title>Dashboard</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/styles.css" />
-  <script src="js/verifyAccess.js" type="module"></script>
-  <title>Dashboard</title>
-</head>
-
-<body class="admin-dashboard-body">
-  <main>
-    <div class="admin-dropdown">
-      <!-- <a class="admin-button"> -->
-      <img src="images/user-button.png" alt="User logo" />
-      <div class="dropdown-content">
-        <a class="dashboard-button" href="./admin-dashboard.html"> Dashboard </a>
-        <a class="logout-button"> Logout </a>
+  <body class="admin-dashboard-body">
+    <main>
+      <div class="admin-dropdown">
+        <!-- <a class="admin-button"> -->
+        <img src="images/user-button.png" alt="User logo" />
+        <div class="dropdown-content">
+          <a class="dashboard-button" href="./admin-dashboard.html">
+            Dashboard
+          </a>
+          <a class="logout-button"> Logout </a>
+        </div>
       </div>
-    </div>
 
-    <a href="./index.html"><img class="logo" src="images/logo.png"></a>
+      <a href="./index.html"
+        ><img class="logo" src="images/logo.png" alt="Website logo"
+      /></a>
 
-
-    <div class="dashboard-buttons">
-      <a href="./admin-session-info.html" class="start-session-button common-button">
-        Start Session
-      </a>
-      <a href="./join.html" class="join-session common-button">
-        Join Session
-      </a>
-      <a href="./past-results.html" class="past-results common-button">
-        Past Results
-      </a>
-    </div>
-  </main>
-</body>
-
+      <div class="dashboard-buttons">
+        <a
+          href="./admin-session-info.html"
+          class="start-session-button common-button"
+        >
+          Start Session
+        </a>
+        <a href="./join.html" class="join-session common-button">
+          Join Session
+        </a>
+        <a href="./past-results.html" class="past-results common-button">
+          Past Results
+        </a>
+      </div>
+    </main>
+  </body>
 </html>

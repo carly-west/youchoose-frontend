@@ -1,77 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Details</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="js/room.js" type="module"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Restaurant Details</title>
-  <link rel="stylesheet" href="./css/styles.css" />
-  <script src="js/room.js" type="module"></script>
-</head>
-
-<body>
-  <main>
-    <div class="admin-code-body">
-      <div class="admin-dropdown">
-        <!-- <a class="admin-button"> -->
-        <img src="images/user-button.png" alt="User logo" />
-        <div class="dropdown-content">
-          <a class="dashboard-button" href="./admin-dashboard.html">
-            Dashboard
-          </a>
-          <a class="logout-button"> Logout </a>
+  <body>
+    <main>
+      <div class="admin-code-body">
+        <div class="admin-dropdown">
+          <!-- <a class="admin-button"> -->
+          <img src="images/user-button.png" alt="User logo" />
+          <div class="dropdown-content">
+            <a class="dashboard-button" href="./admin-dashboard.html">
+              Dashboard
+            </a>
+            <a class="logout-button"> Logout </a>
+          </div>
         </div>
+        <a href="./index.html"
+          ><img class="logo" src="images/logo.png" alt="Website logo"
+        /></a>
+
+        <p id="admin-code" class="admin-code"></p>
+
+        <p id="people-joined"><span id="userCount"></span> people joined</p>
+
+        <input type="hidden" value="Start" class="button-reuse" id="start" />
       </div>
-      <a href="./index.html"><img class="logo" src="images/logo.png"></a>
 
+      <section class="hidden" id="restaurant-info-wrapper">
+        <a href="./index.html"
+          ><img class="logo" src="images/logo.png" alt="Website logo"
+        /></a>
 
-      <p id="admin-code" class="admin-code"></p>
-
-      <p id="people-joined"><span id="userCount"></span> people joined</p>
-
-      <input type="hidden" value="Start" class="button-reuse" id="start" />
-    </div>
-
-    <section class="hidden" id="restaurant-info-wrapper">
-      <a href="./index.html"><img class="logo" src="images/logo.png"></a>
-
-      <h2 id="restaurant-name">Restaurant</h2>
-      <p id="restaurant-info"></p>
-      <div class="options">
-        <button class="btn-image" id="like">
-          <img src="./images/star.png" alt="Happy Face Icon" />
-        </button>
-        <button class="btn-image" id="dislike">
-          <img src="./images/meh.png" alt="Happy Face Icon" />
-        </button>
-      </div>
-    </section>
-
-    <div id="waiting-screen" class="hidden">
-      <!-- some code to show we are waiting -->
-      <p>Waiting...</p>
-      <img src="https://media.giphy.com/media/JVGLHEuzbVviw/giphy.gif" alt="funny GIF" style="width: 100%" />
-    </div>
-
-    <div id="results-wrapper" class="hidden">
-      <div class="admin-dropdown">
-        <img src="images/user-button.png" alt="User logo" />
-        <div class="dropdown-content">
-          <a class="dashboard-button" href="./admin-dashboard.html">
-            Dashboard
-          </a>
-          <a class="logout-button"> Logout </a>
+        <h2 id="restaurant-name">Restaurant</h2>
+        <p id="restaurant-info"></p>
+        <div class="options">
+          <button class="btn-image" id="like">
+            <img src="./images/star.png" alt="Happy Face Icon" />
+          </button>
+          <button class="btn-image" id="dislike">
+            <img src="./images/meh.png" alt="Happy Face Icon" />
+          </button>
         </div>
+      </section>
+
+      <div id="waiting-screen" class="hidden">
+        <!-- some code to show we are waiting -->
+        <p>Waiting...</p>
+        <img
+          src="https://media.giphy.com/media/JVGLHEuzbVviw/giphy.gif"
+          alt="funny GIF"
+          style="width: 100%"
+        />
       </div>
-      <a href="./index.html"><img class="logo" src="images/logo.png"></a>
 
-      <h2>Your Top 3</h2>
-      <ol id="results"></ol>
+      <div id="results-wrapper" class="hidden">
+        <div class="admin-dropdown">
+          <img src="images/user-button.png" alt="User logo" />
+          <div class="dropdown-content">
+            <a class="dashboard-button" href="./admin-dashboard.html">
+              Dashboard
+            </a>
+            <a class="logout-button"> Logout </a>
+          </div>
+        </div>
+        <a href="./index.html"
+          ><img class="logo" src="images/logo.png" alt="Website logo"
+        /></a>
 
-      <input type="hidden" value="Save Results" class="button-reuse" id="saveResults" />
-    </div>
-  </main>
-</body>
+        <h2>Your Top 3</h2>
+        <ol id="results"></ol>
 
+        <input
+          type="hidden"
+          value="Save Results"
+          class="button-reuse"
+          id="saveResults"
+        />
+      </div>
+    </main>
+  </body>
 </html>

@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Join</title>
+    <script src="js/join.js" type="module"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/styles.css" />
-  <title>Join</title>
-  <script src="js/join.js" type="module"></script>
-</head>
-
-<body class="join-body">
-  <main>
-    <div class="admin-dropdown">
-      <!-- <a class="admin-button"> -->
-      <img src="images/user-button.png" alt="User logo" />
-      <div class="dropdown-content">
-        <a class="dashboard-button" href="./admin-dashboard.html"> Dashboard </a>
-        <a class="logout-button"> Logout </a>
+  <body class="join-body">
+    <main>
+      <div class="admin-dropdown">
+        <!-- <a class="admin-button"> -->
+        <img src="images/user-button.png" alt="User logo" />
+        <div class="dropdown-content">
+          <a class="dashboard-button" href="./admin-dashboard.html">
+            Dashboard
+          </a>
+          <a class="logout-button"> Logout </a>
+        </div>
       </div>
-    </div>
 
-    <a href="./index.html"><img class="logo" src="images/logo.png"></a>
+      <a href="./index.html"
+        ><img class="logo" src="images/logo.png" alt="Website logo"
+      /></a>
 
-    <label for="enter-key">Enter Key</label>
-    <input type="text" id="enter-key" pattern="[0-9]+" />
-    <!-- <input type="number" id="enter-key"/> -->
-    <input type="button" class="button-reuse" id="join" value="Join" />
+      <label for="enter-key">Enter Key</label>
+      <input type="text" id="enter-key" pattern="[0-9]+" />
+      <!-- <input type="number" id="enter-key"/> -->
+      <input type="button" class="button-reuse" id="join" value="Join" />
 
-    <a href="./index.html" class="back-button"> Back </a>
-  </main>
-</body>
-
+      <a href="./index.html" class="back-button"> Back </a>
+    </main>
+  </body>
 </html>
