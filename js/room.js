@@ -116,7 +116,8 @@ socket.on("finish", (results) => {
   qs("#waiting-screen").classList.add("hidden");
   let resultsDiv = qs("#results-wrapper");
   resultsDiv.classList.remove("hidden");
-  qs("#results").innerHTML = `Your top 3: ${results}`;
+  const resultslist = results.map((result) => `<li>${result}</li>`).join("");
+  qs("#results").innerHTML = resultslist;
 
   if (creator) {
     qs("#saveResults").type = "button";

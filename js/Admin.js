@@ -35,7 +35,8 @@ export default class Admin {
       location.href = "./admin-dashboard.html";
     } catch (err) {
       console.log(err.message);
-      alertMessage(err.message.error);
+      const length = err.message.error.length;
+      alertMessage(err.message.error[length - 1]);
     }
   }
 
@@ -46,6 +47,7 @@ export default class Admin {
       setLocalStorage("alertMessage", `${message} You can log in now.`);
       location.href = "./login.html";
     } catch (err) {
+      console.log(err);
       console.log(err.message.error[0].msg);
       alertMessage(err.message.error[0].msg);
     }
@@ -86,10 +88,10 @@ export default class Admin {
     const id = e.id;
     let password = "";
     switch (id) {
-      case "password":
+      case "pswrd":
         password = qs("#password");
         break;
-      case "confirmPassword":
+      case "confirmPswrd":
         password = qs("#confirmPassword");
         break;
     }
