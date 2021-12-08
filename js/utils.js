@@ -94,7 +94,7 @@ export function alertMessage(message, error = true, scroll = true) {
 export function isAdmin() {
   const token = getSessionStorage("userToken");
   const backButton = qs(".back-button");
-  const title = qsa(".you-choose-h1 a");
+  const title = qsa(".logo-link");
 
   if (!token) {
     qsa(".admin-dropdown").forEach((item) => item.classList.add("hidden"));
