@@ -76,11 +76,24 @@ socket.on("room-start-success", (msg) => {
 //runs when you get a new restaurant
 socket.on("nextRestaurant", (restaurant) => {
   //load restaurant data for user to see
+  
   currentRestaurant = restaurant;
   console.log(restaurant);
   qs("#waiting-screen").classList.add("hidden");
   qs("#restaurant-info-wrapper").classList.remove("hidden");
   qs("#restaurant-name").textContent = restaurant.restaurant_name;
+  
+  if (!qs('.timer').classList.contains('moving-timer')) {
+    //if class does not exist, add it to start the timer
+    qs('.timer').classList.add('moving-timer')
+  } else {
+    // if it does exist, remove it for a second, then add it again
+    qs('.timer').classList.remove('moving-timer')
+    setTimeout(() => {
+      qs('.timer').classList.add('moving-timer')
+    }, 100)
+  }
+
 });
 
 // send a "like" to the server.

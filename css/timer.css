@@ -1,0 +1,23 @@
+.timer-wrapper {
+    box-sizing: content-box;
+    background-color: rgb(44, 44, 44);
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    border: 5px solid rgb(0, 0, 0);
+}
+
+.timer {
+    background-color: green;
+    height: 50px;
+    width: 0%;
+}
+
+.moving-timer {
+    width: 100%;
+    transition: width linear 9s;
+}
+
+
