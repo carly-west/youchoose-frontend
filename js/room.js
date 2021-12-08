@@ -81,6 +81,12 @@ socket.on("nextRestaurant", (restaurant) => {
   qs("#waiting-screen").classList.add("hidden");
   qs("#restaurant-info-wrapper").classList.remove("hidden");
   qs("#restaurant-name").textContent = restaurant.restaurant_name;
+  let price = "";
+  if (restaurant.price_range != "") {
+    price = restaurant.price_range;
+  }
+
+  retaurantInfo = qs("#restaurant-info");
 });
 
 // send a "like" to the server.
