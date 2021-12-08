@@ -90,7 +90,9 @@ socket.on("nextRestaurant", (restaurant) => {
   
   if (!qs('.timer').classList.contains('moving-timer')) {
     //if class does not exist, add it to start the timer
-    qs('.timer').classList.add('moving-timer')
+    setTimeout(() => {
+      qs('.timer').classList.add('moving-timer')
+    }, 100)
   } else {
     // if it does exist, remove it for a second, then add it again
     qs('.timer').classList.remove('moving-timer')
@@ -132,6 +134,7 @@ socket.on("finish", (results) => {
   //todo: load waiting screen
   console.log("session finished");
   qs("#waiting-screen").classList.add("hidden");
+  qs('#restaurant-info-wrapper').classList.add('hidden')
   let resultsDiv = qs("#results-wrapper");
   resultsDiv.classList.remove("hidden");
   const resultslist = results.map((result) => `<li>${result}</li>`).join("");
