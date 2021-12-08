@@ -150,8 +150,6 @@ socket.on("redirect", () => {
   console.log("redirect triggered");
   if (creator) {
     location.href = "./past-results.html";
-  } else {
-    location.href = "./index.html";
   }
 });
 
