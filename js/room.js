@@ -81,6 +81,7 @@ socket.on("nextRestaurant", (restaurant) => {
   qs("#waiting-screen").classList.add("hidden");
   qs("#restaurant-info-wrapper").classList.remove("hidden");
   qs("#restaurant-name").textContent = restaurant.restaurant_name;
+  // http://127.0.0.1:5501/choice.html?room=100141&creator=true
   let price = "";
   if (restaurant.price_range != "") {
     price = restaurant.price_range;
