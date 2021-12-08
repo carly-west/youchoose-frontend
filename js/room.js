@@ -34,6 +34,11 @@ let currentRestaurant;
 
 // socket.emit('join-room', roomId)
 
+socket.on('join-fail', () => {
+  console.log('join-fail');
+  alertMessage('Cannot join. Room has already been started.');
+})
+
 // runs if you can't connect to the socket server
 socket.on("connect_error", (error) => {
   console.log("Couldn't connect: ", error);
