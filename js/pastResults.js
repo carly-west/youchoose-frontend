@@ -56,7 +56,7 @@ export default class pastResults {
   async deleteResult(e) {
     await this.services.deletePastResult(
       this.token,
-      e.target.dataset.setid,
+      e.currentTarget.dataset.setid,
     );
     this.renderPastResults();
   }

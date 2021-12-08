@@ -81,9 +81,10 @@ export default class ExternalServices {
           Authorization: token,
         }
       }).then(convertToJson);
+      //return response.message;
     }
     catch(err){
-      console.log(err.message.message);
+      console.log(err);
     }
 
   }
