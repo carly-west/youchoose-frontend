@@ -306,6 +306,10 @@ h2 {
   text-align: center;
 }
 
+#restaurant-info p {
+  margin: 0;
+}
+
 .restaurant-name {
   font-size: 2em;
 }
