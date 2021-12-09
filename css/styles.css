@@ -306,10 +306,14 @@ h2 {
   text-align: center;
 }
 
+.restaurant-name {
+  font-size: 2em;
+}
+
 #restaurant-info div {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   max-width: 50%;
   margin: 0 auto;
@@ -462,7 +466,7 @@ ol#results li::marker {
 
   /* Choice */
   #restaurant-info div {
-    flex-direction: row;
+    /* flex-direction: row; */
   }
 
   #restaurant-info h3 {
@@ -470,7 +474,7 @@ ol#results li::marker {
   }
 
   #restaurant-info ul li {
-    text-align: right;
+    /* text-align: right; */
   }
 
   /* Results */

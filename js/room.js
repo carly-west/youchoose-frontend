@@ -94,7 +94,7 @@ socket.on("nextRestaurant", (restaurant) => {
     restaurant.hasOwnProperty("price_range") &&
     restaurant.price_range != ""
   ) {
-    info += `<div><h3>Price Range</h3><p>${restaurant.price_range}</p></div>`;
+    info += `<div><p>${restaurant.price_range}</p></div>`;
   }
 
   if (
@@ -105,7 +105,7 @@ socket.on("nextRestaurant", (restaurant) => {
     console.log(
       restaurant.cuisines.length != 1 && restaurant.cuisines[0] != ""
     );
-    info += "<div><h3>Cuisines</h3><ul>";
+    info += "<div><ul>";
     info += restaurant.cuisines
       .map((cuisine) => `<li>${cuisine}</li>`)
       .join("");
