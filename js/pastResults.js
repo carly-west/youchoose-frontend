@@ -1,5 +1,5 @@
 import ExternalServices from "./externalServices.js";
-import { getSessionStorage, qs } from "./utils.js";
+import { alertMessage, getSessionStorage, qs } from "./utils.js";
 
 export default class pastResults {
   constructor() {
@@ -23,27 +23,28 @@ export default class pastResults {
     // loop through and insert data into html
     var resultListHtml = "";
     var resultSethtml = "";
-    if(!this.results.results[0]) {
-      resultListHtml = '<h2>No Saved Results</h2>';
-    }
-    else{
+    if (!this.results.results[0]) {
+      resultListHtml = "<h2>No Saved Results</h2>";
+    } else {
       this.results.results.forEach((result) => {
         // parse
         const date = new Date(result.date);
-          const month = date.getMonth() + 1;
-          const day = date.getDate();
-          const year = date.getFullYear();
-        
-      resultSethtml = `<div class="result">
-            <button class="btn" data-setid = ${result._id}><i class="fa fa-trash"></i></button>
-            <h3 class="date">${month + '/' + day + '/' + year}</h3>
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        const year = date.getFullYear();
+
+        resultSethtml = `<div class="result">
+            <button class="btn" data-setid = ${
+              result._id
+            }><i class="fa fa-trash"></i></button>
+            <h3 class="date">${month + "/" + day + "/" + year}</h3>
             <ol>`;
-      result.resultSet.forEach((resturaunt) => {
-        resultSethtml += `<li>${resturaunt}</li>`;
+        result.resultSet.forEach((resturaunt) => {
+          resultSethtml += `<li>${resturaunt}</li>`;
+        });
+        resultSethtml += `</ol></div>`;
+        resultListHtml += resultSethtml;
       });
-      resultSethtml += `</ol></div>`;
-      resultListHtml += resultSethtml;
-    });
     }
     qs("#pastResults").innerHTML = resultListHtml;
 
@@ -56,9 +57,10 @@ export default class pastResults {
   async deleteResult(e) {
     await this.services.deletePastResult(
       this.token,
-      e.currentTarget.dataset.setid,
+      e.currentTarget.dataset.setid
     );
     this.renderPastResults();
+    alertMessage("Successfully deleted!");
   }
 }
 
