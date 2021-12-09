@@ -4,8 +4,9 @@ import ExternalServices from "./externalServices.js";
 const services = new ExternalServices();
 
 //when the button is clicked, redirect to a new page
-setClick("#join", () => {
+qs("#join").addEventListener("submit", (e) => {
   //TODO: check if the room exists before redirecting
+  e.preventDefault();
   checkId();
 });
 
