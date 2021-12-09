@@ -3,10 +3,10 @@
 :root {
   --black: #293241;
   --salmon: #f08b72;
-  --ice-blue: #e0fbfc;
-  --light-blue: #98c1d9;
-  --light-blue-hover: #b1d0e2;
-  --dark-blue: #5075a5;
+  --ice-blue: #ffffff;
+  --light-blue: #037B3C;
+  --light-blue-hover: #069D4F;
+  --dark-blue: #f29602;
 }
 
 * {
@@ -87,6 +87,7 @@ main {
 
 /* Admin dropdown */
 .admin-dropdown img {
+  cursor: pointer;
   max-width: 80px;
   float: right;
   width: 20%;
@@ -126,14 +127,15 @@ main {
 
 /* Reuseable button */
 .button-reuse {
+  color: white;
   display: block;
   width: 100%;
   padding: 0.5rem 1rem 0.5rem 1rem;
   font-size: 15px;
   cursor: pointer;
   margin-bottom: 1.8rem;
-  background-color: var(--salmon);
-  border-color: var(--salmon);
+  background-color: var(--light-blue);
+  border-color: var(--light-blue);
 }
 
 section.top ul {
@@ -161,33 +163,39 @@ a {
 }
 
 /* Back-button */
-.back-button {
-  width: 4rem;
-  padding: 0.5rem 0px 0.5rem 0px;
-  display: block;
+.back-button img{
+  max-width: 30px;
+  display: inline-block;
   font-size: 1rem;
-  border: 1px black solid;
   text-align: center;
-  background-color: var(--light-blue);
   margin: 0 auto;
+  float: left;
 }
 
 /* General Buttons */
 .common-button {
-  margin: 10% auto;
-  width: 12rem;
-  padding: 1.5rem 0px 1.5rem 0px;
-  display: block;
-  font-size: 1.5rem;
-  border: 2px black solid;
+  width: 60%;
+  border-radius: 40px;
+  padding: 25px 0 25px 0;
+  display:block;
   text-align: center;
-  border-radius: 5px;
-
+  margin: 15px auto 15px auto;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 19px;
+  outline: none;
+  position: relative;
+  background: var(--light-blue);
+    color: #fff;
+    box-shadow: 0 6px var(--light-blue-hover);
   background-color: var(--light-blue);
 }
 
 .common-button:hover {
-  background-color: var(--light-blue-hover);
+  
+  box-shadow: 0 4px var(--light-blue);
+	top: 2px;
 }
 
 .start-session-button {
@@ -218,10 +226,6 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
   margin: 10px auto 30px auto;
-}
-
-label {
-  margin-left: 10%;
 }
 
 h2 {
@@ -353,8 +357,8 @@ ol#results li::marker {
 
 /* Alert Message */
 .alert {
-  background-color: var(--salmon);
-  border: 2px solid var(--salmon);
+  background-color: var(--light-blue-hover);
+  border: 2px solid var(--light-blue);
   display: flex;
   justify-content: space-between;
   margin: 0.25em 0.5em 1em;
@@ -420,6 +424,7 @@ ol#results li::marker {
   grid-column: 1/3;
 }
 
+
 /* Medium view */
 @media only screen and (min-width: 32.5rem) {
   body {
@@ -427,6 +432,10 @@ ol#results li::marker {
     margin: auto;
     /* Why isn't this working */
     background-color: var(--dark-blue);
+  }
+
+  .common-button {
+    width: 50%;
   }
 
   html {
@@ -472,6 +481,10 @@ ol#results li::marker {
     max-width: 50%;
   }
 
+
+  .common-button {
+    width: 50%;
+  }
   .button-reuse {
     /* max-width: 40%; */
     margin-left: auto;
