@@ -4,8 +4,8 @@
   --black: #293241;
   --salmon: #f08b72;
   --ice-blue: #ffffff;
-  --light-blue: #037B3C;
-  --light-blue-hover: #069D4F;
+  --light-blue: #037b3c;
+  --light-blue-hover: #069d4f;
   --dark-blue: #f29602;
 }
 
@@ -24,11 +24,16 @@ input {
 
 /* You choose logo */
 .logo {
+  width: 100%;
+  display: block;
+  margin: 0 auto 30px auto;
+}
+
+a.logo-link {
   min-width: 200px;
   width: 65%;
   max-width: 350px;
-  display: block;
-  margin: 0 auto 30px auto;
+  margin: 0 auto;
 }
 
 .you-choose-h1 a {
@@ -163,7 +168,7 @@ a {
 }
 
 /* Back-button */
-.back-button img{
+.back-button img {
   max-width: 30px;
   display: inline-block;
   font-size: 1rem;
@@ -177,7 +182,7 @@ a {
   width: 60%;
   border-radius: 40px;
   padding: 25px 0 25px 0;
-  display:block;
+  display: block;
   text-align: center;
   margin: 15px auto 15px auto;
   text-transform: uppercase;
@@ -187,15 +192,14 @@ a {
   outline: none;
   position: relative;
   background: var(--light-blue);
-    color: #fff;
-    box-shadow: 0 6px var(--light-blue-hover);
+  color: #fff;
+  box-shadow: 0 6px var(--light-blue-hover);
   background-color: var(--light-blue);
 }
 
 .common-button:hover {
-  
   box-shadow: 0 4px var(--light-blue);
-	top: 2px;
+  top: 2px;
 }
 
 .start-session-button {
@@ -424,7 +428,6 @@ ol#results li::marker {
   grid-column: 1/3;
 }
 
-
 /* Medium view */
 @media only screen and (min-width: 32.5rem) {
   body {
@@ -480,7 +483,6 @@ ol#results li::marker {
   body {
     max-width: 50%;
   }
-
 
   .common-button {
     width: 50%;
