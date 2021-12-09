@@ -122,14 +122,15 @@ main {
 
 /* Reuseable button */
 .button-reuse {
+  color: white;
   display: block;
   width: 100%;
   padding: 0.5rem 1rem 0.5rem 1rem;
   font-size: 15px;
   cursor: pointer;
   margin-bottom: 1.8rem;
-  background-color: var(--salmon);
-  border-color: var(--salmon);
+  background-color: var(--light-blue);
+  border-color: var(--light-blue);
 }
 
 section.top ul {
@@ -168,7 +169,7 @@ a {
 
 /* General Buttons */
 .common-button {
-  width: 50%;
+  width: 60%;
   border-radius: 40px;
   padding: 25px 0 25px 0;
   display:block;
@@ -318,8 +319,8 @@ ol#results li::marker {
 
 /* Alert Message */
 .alert {
-  background-color: var(--salmon);
-  border: 2px solid var(--salmon);
+  background-color: var(--light-blue);
+  border: 2px solid var(--light-blue);
   display: flex;
   justify-content: space-between;
   margin: 0.25em 0.5em 1em;
