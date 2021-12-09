@@ -90,16 +90,26 @@ socket.on("nextRestaurant", (restaurant) => {
   // http://127.0.0.1:5501/choice.html?room=100141&creator=true
 
   let info = "";
-  if (restaurant.price_range != "") {
-    info += `<p>Price Range: ${restaurant.price_range}</p>`;
+  if (
+    restaurant.hasOwnProperty("price_range") &&
+    restaurant.price_range != ""
+  ) {
+    info += `<div><h3>Price Range</h3><p>${restaurant.price_range}</p></div>`;
   }
 
-  if (restaurant.cuisines.length != 1 && restaurant.cuisines[0] != "") {
-    info += "<h4>Cuisines</h4><ul>";
+  if (
+    restaurant.hasOwnProperty("cuisines") &&
+    restaurant.cuisines.length != 0 &&
+    restaurant.cuisines[0] != ""
+  ) {
+    console.log(
+      restaurant.cuisines.length != 1 && restaurant.cuisines[0] != ""
+    );
+    info += "<div><h3>Cuisines</h3><ul>";
     info += restaurant.cuisines
       .map((cuisine) => `<li>${cuisine}</li>`)
       .join("");
-    info += "</ul>";
+    info += "</ul></div>";
   }
 
   if (info != "") {

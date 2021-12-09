@@ -24,7 +24,9 @@ input {
 
 /* You choose logo */
 .logo {
-  max-width: 60%;
+  min-width: 200px;
+  width: 65%;
+  max-width: 350px;
   display: block;
   margin: 0 auto 30px auto;
 }
@@ -56,16 +58,18 @@ main {
 .options {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 25px;
 }
 
 .btn-image {
+  min-width: 125px;
   max-width: 200px;
   background-color: transparent;
   border: transparent;
 }
 
 .btn-image img {
-  width: 100%;
+  width: 90%;
 }
 
 .result {
@@ -292,6 +296,33 @@ h2 {
   text-align: center;
 }
 
+#restaurant-info div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+#restaurant-info h3 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+#restaurant-info ul {
+  font-size: 1.1rem;
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+#restaurant-info ul li {
+  line-height: 30px;
+  text-align: center;
+}
+
 /* Results */
 
 ol#results {
@@ -409,6 +440,19 @@ ol#results li::marker {
     font-size: 85px;
   }
 
+  /* Choice */
+  #restaurant-info div {
+    flex-direction: row;
+  }
+
+  #restaurant-info h3 {
+    margin: 0;
+  }
+
+  #restaurant-info ul li {
+    text-align: right;
+  }
+
   /* Results */
   ol#results {
     width: 50%;
@@ -436,6 +480,8 @@ ol#results li::marker {
   #admin-code {
     font-size: 100px;
   }
+
+  /* Choice */
 
   /* Results */
   ol#results {
