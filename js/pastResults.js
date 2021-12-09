@@ -23,12 +23,16 @@ export default class pastResults {
     // loop through and insert data into html
     var resultListHtml = "";
     var resultSethtml = "";
-    this.results.results.forEach((result) => {
+    if(!this.results.results[0]) {
+      resultListHtml = '<h2>No Saved Results</h2>';
+    }
+    else{
+      this.results.results.forEach((result) => {
         // parse
         const date = new Date(result.date);
-        const month = date.getMonth() + 1;
-        const day = date.getDate();
-        const year = date.getFullYear();
+          const month = date.getMonth() + 1;
+          const day = date.getDate();
+          const year = date.getFullYear();
         
       resultSethtml = `<div class="result">
             <button class="btn" data-setid = ${result._id}><i class="fa fa-trash"></i></button>
@@ -40,6 +44,7 @@ export default class pastResults {
       resultSethtml += `</ol></div>`;
       resultListHtml += resultSethtml;
     });
+    }
     qs("#pastResults").innerHTML = resultListHtml;
 
     const trashButton = document.querySelectorAll(".btn");
@@ -49,11 +54,10 @@ export default class pastResults {
   }
 
   async deleteResult(e) {
-    const message = await this.services.deletePastResult(
+    await this.services.deletePastResult(
       this.token,
-      e.target.dataset.setid
+      e.currentTarget.dataset.setid,
     );
-    console.log(message);
     this.renderPastResults();
   }
 }
