@@ -376,6 +376,7 @@ ol#results li::marker {
   background-color: transparent;
   color: #303030;
   border: none;
+  cursor: pointer;
 }
 
 /* Past Results */
