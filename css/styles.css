@@ -83,6 +83,7 @@ main {
 
 /* Admin dropdown */
 .admin-dropdown img {
+  cursor: pointer;
   max-width: 80px;
   float: right;
   width: 20%;
@@ -319,7 +320,7 @@ ol#results li::marker {
 
 /* Alert Message */
 .alert {
-  background-color: var(--light-blue);
+  background-color: var(--light-blue-hover);
   border: 2px solid var(--light-blue);
   display: flex;
   justify-content: space-between;
