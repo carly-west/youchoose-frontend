@@ -287,6 +287,11 @@ h2 {
   font-size: 28px;
 }
 
+/* Choice */
+#restaurant-info {
+  text-align: center;
+}
+
 /* Results */
 
 ol#results {

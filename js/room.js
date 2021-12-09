@@ -88,12 +88,23 @@ socket.on("nextRestaurant", (restaurant) => {
   qs("#restaurant-info-wrapper").classList.remove("hidden");
   qs("#restaurant-name").textContent = restaurant.restaurant_name;
   // http://127.0.0.1:5501/choice.html?room=100141&creator=true
-  let price = "";
+
+  let info = "";
   if (restaurant.price_range != "") {
-    price = restaurant.price_range;
+    info += `<p>Price Range: ${restaurant.price_range}</p>`;
   }
 
-  retaurantInfo = qs("#restaurant-info");
+  if (restaurant.cuisines.length != 1 && restaurant.cuisines[0] != "") {
+    info += "<h4>Cuisines</h4><ul>";
+    info += restaurant.cuisines
+      .map((cuisine) => `<li>${cuisine}</li>`)
+      .join("");
+    info += "</ul>";
+  }
+
+  if (info != "") {
+    qs("#restaurant-info").innerHTML = info;
+  }
 
   if (!qs(".timer").classList.contains("moving-timer")) {
     //if class does not exist, add it to start the timer
