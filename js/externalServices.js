@@ -74,18 +74,19 @@ export default class ExternalServices {
       const response = await fetch(baseURL + "deleteResult", {
         method: "DELETE",
         body: JSON.stringify({
-          resultId: result,
+          resultId: result
         }),
         headers: {
           "Content-Type": "application/json",
           Authorization: token,
         }
       }).then(convertToJson);
-      return response.message;
+      //return response.message;
     }
-    catch (err) {
-      alertMessage(err.message.message);
+    catch(err){
+      console.log(err);
     }
+
   }
 
   async saveRequest(results, token) {
