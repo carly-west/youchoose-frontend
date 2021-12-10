@@ -4,9 +4,9 @@
   --black: #293241;
   --salmon: #f08b72;
   --ice-blue: #ffffff;
-  --light-blue: #037b3c;
-  --light-blue-hover: #069d4f;
-  --dark-blue: #f29602;
+  --dark-green: #037b3c;
+  --dark-green-hover: #069d4f;
+  --orange: #f29602;
 }
 
 * {
@@ -37,7 +37,7 @@ a.logo-link {
 }
 
 .you-choose-h1 a {
-  color: var(--dark-blue);
+  color: var(--orange);
 }
 
 body {
@@ -53,8 +53,8 @@ html {
 
 main {
   background-color: var(--ice-blue);
-  border-top: 30px solid var(--dark-blue);
-  border-bottom: 30px solid var(--dark-blue);
+  border-top: 30px solid var(--orange);
+  border-bottom: 30px solid var(--orange);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -141,8 +141,8 @@ main {
   font-size: 15px;
   cursor: pointer;
   margin-bottom: 1.8rem;
-  background-color: var(--light-blue);
-  border-color: var(--light-blue);
+  background-color: var(--dark-green);
+  border-color: var(--dark-green);
 }
 
 section.top ul {
@@ -193,14 +193,14 @@ a {
   font-size: 19px;
   outline: none;
   position: relative;
-  background: var(--light-blue);
+  background: var(--dark-green);
   color: #fff;
-  box-shadow: 0 6px var(--light-blue-hover);
-  background-color: var(--light-blue);
+  box-shadow: 0 6px var(--dark-green-hover);
+  background-color: var(--dark-green);
 }
 
 .common-button:hover {
-  box-shadow: 0 4px var(--light-blue);
+  box-shadow: 0 4px var(--dark-green);
   top: 2px;
 }
 
@@ -364,20 +364,21 @@ ol#results li {
 
 ol#results li::marker {
   content: counter(my-awesome-counter) ".";
-  color: var(--dark-blue);
+  color: var(--orange);
   font-weight: bold;
   font-size: 1.5rem;
 }
 
 /* Alert Message */
 .alert {
-  background-color: var(--light-blue-hover);
-  border: 2px solid var(--light-blue);
+  background-color: var(--dark-green);
+  border: 2px solid var(--dark-green);
+  border-radius: 4px;
   display: flex;
   justify-content: space-between;
   margin: 0.25em 0.5em 1em;
   padding: 0 0.5em;
-  color: #303030;
+  color: white;
 }
 
 .add-alert {
@@ -393,7 +394,7 @@ ol#results li::marker {
   margin: 0 10px;
   padding: 0;
   background-color: transparent;
-  color: #303030;
+  color: white;
   border: none;
   cursor: pointer;
 }
@@ -448,7 +449,7 @@ ol#results li::marker {
     max-width: 80%;
     margin: auto;
     /* Why isn't this working */
-    background-color: var(--dark-blue);
+    background-color: var(--orange);
   }
 
   .common-button {
