@@ -103,7 +103,6 @@ main {
 
 .admin-dropdown {
   position: relative;
-  /* float: right; */
 }
 
 .dropdown-content {
@@ -157,10 +156,6 @@ a {
   color: black;
 }
 
-/* a:visited {
-  color: black;
-} */
-
 .register-link {
   color: blue;
   text-decoration: underline;
@@ -209,14 +204,6 @@ a {
 }
 
 /* Index */
-/* .login-button {
-  margin: 20% auto auto auto;
-}
-
-.join-button {
-  margin: 10% auto auto auto;
-} */
-
 .index-body h2 {
   text-align: center;
   max-width: 80%;
@@ -256,10 +243,6 @@ h2 {
   width: 20px;
   padding: 2px;
 }
-
-/* .register-body, .login-body {
- margin: 1rem 0px 0px 1rem;
-} */
 
 .register-body button,
 .login-body button {
@@ -470,16 +453,8 @@ ol#results li::marker {
   }
 
   /* Choice */
-  #restaurant-info div {
-    /* flex-direction: row; */
-  }
-
   #restaurant-info h3 {
     margin: 0;
-  }
-
-  #restaurant-info ul li {
-    /* text-align: right; */
   }
 
   /* Results */
