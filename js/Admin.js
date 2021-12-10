@@ -37,7 +37,8 @@ export default class Admin {
     } catch (err) {
       console.log(err.message);
       const length = err.message.error.length;
-      alertMessage(err.message.error[length - 1]);
+      // alertMessage(err.message.error[length - 1]);
+      alertMessage("Incorrect username or password.");
     }
   }
 
